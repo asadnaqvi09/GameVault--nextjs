@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Action",
+        "bgImg": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-action-w-220x130.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Adventure",
+        "bgImg": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-action-w-220x130.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Casual",
+        "bgImg": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-action-w-220x130.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Horror",
+        "bgImg": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-action-w-220x130.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Indie",
+        "bgImg": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-action-w-220x130.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Racing",
+        "bgImg": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-action-w-220x130.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Simulation",
+        "bgImg": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-action-w-220x130.jpg"
+    },
+    {
+        "id": 8,
+        "name": "RPG",
+        "bgImg": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-action-w-220x130.jpg"
+    }
+]
