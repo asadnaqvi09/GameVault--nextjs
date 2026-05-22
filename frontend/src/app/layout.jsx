@@ -2,6 +2,7 @@ import { workSans, satoshi } from "../lib/fonts";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import SmoothScroll from "@/components/shared/SmoothScroll";
+import StoreProvider from '@/store/provider/storeProvider';
 import "./global.css";
 
 export const metadata = {
@@ -16,11 +17,12 @@ export default function RootLayout({ children }) {
       className={`${satoshi.variable} ${workSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <SmoothScroll>
+          <StoreProvider>
+          <SmoothScroll />
           <Navbar />
           {children}
           <Footer />
-        </SmoothScroll>
+        </StoreProvider>
       </body>
     </html>
   );
