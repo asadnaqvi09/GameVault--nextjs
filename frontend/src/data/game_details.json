@@ -1,0 +1,1462 @@
+[
+    {
+      "id": "baldurs-gate-3",
+      "title": "Baldur's Gate 3",
+      "price": 59.99,
+      "oldPrice": 69.99,
+      "rating": 5.0,
+      "tags": ["Hot", "Award Winner"],
+      "smallDescription": "Gather your party and return to the Forgotten Realms in a tale of fellowship and betrayal, sacrifice and survival.",
+      "genre": "RPG",
+      "gameMode": "Single-player, Multiplayer",
+      "ageRestrictionBadge": "PEGI 18",
+      "options": {
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
+        "editions": ["Standard Edition", "Deluxe Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-08-03",
+        "publisher": "Larian Studios",
+        "developer": "Larian Studios",
+        "languages": ["English", "French", "German", "Spanish", "Polish", "Russian"],
+        "audio": ["English", "French", "German"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_e9d2ed4e3d4aa4af89f8e1c5d2e01e8e9da0e7a4.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_3f1e9e9cfb4e02cfcbd9ff5e82e28c0c0c4e07b0.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_2fdf89e01b4b1f58d9e27d66e9d0e5b0e7a0f5e5.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/1T22wNvoNiU",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Gather Your Party",
+            "description": "Choose from 12 classes and 11 races, and build relationships that can blossom into romances or crumble into rivalries as you shape your legend.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "A World Full of Choices",
+            "description": "Every decision carries weight. Your choices ripple through the story, shaping the world of Faerûn and deciding the fate of millions.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_e9d2ed4e3d4aa4af89f8e1c5d2e01e8e9da0e7a4.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Turn-Based Tactical Combat",
+            "description": "Harness the power of Divinity 5e rules in strategic, deeply satisfying combat. Use the environment, spells, and your party's skills to outwit your enemies.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Online & Local Co-op",
+            "description": "Play the full game alone or with up to 3 friends. Each player controls their own character and makes their own decisions, creating diverging stories that can be reconciled.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/ss_3f1e9e9cfb4e02cfcbd9ff5e82e28c0c0c4e07b0.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-bg3-01",
+          "username": "DungeonMaster99",
+          "userRating": 5,
+          "comment": "The most immersive RPG experience I have ever had. Every playthrough feels completely different.",
+          "date": "2026-01-10"
+        },
+        {
+          "reviewId": "rev-bg3-02",
+          "username": "ElvenArcher",
+          "userRating": 5,
+          "comment": "Larian Studios outdid themselves. Game of the decade, possibly ever.",
+          "date": "2026-02-14"
+        }
+      ]
+    },
+    {
+      "id": "elden-ring",
+      "title": "Elden Ring",
+      "price": 59.99,
+      "oldPrice": 79.99,
+      "rating": 4.9,
+      "tags": ["Award Winner", "Bestseller"],
+      "smallDescription": "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between.",
+      "genre": "RPG",
+      "gameMode": "Single-player, Online Multiplayer",
+      "ageRestrictionBadge": "PEGI 16",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
+        "editions": ["Standard Edition", "Deluxe Edition", "Collector's Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2022-02-25",
+        "publisher": "Bandai Namco Entertainment",
+        "developer": "FromSoftware",
+        "languages": ["English", "French", "German", "Spanish", "Japanese", "Chinese"],
+        "audio": ["English", "Japanese"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_e80a907c2e3d6e5d3df01f2fdf7a53c4e1e7e6a0.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_fa47c2c6f48fd3a1af3ab52a96a94d5de9b0ef9c.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_a5e09f5e09e72a82e2e4db7e2e4e0b7e3d7d8a56.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/UhD0_MM4fnU",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "A Vast World Full of Excitement",
+            "description": "A rich interactive fantasy world built on a foundation of mythologies supervised by Hidetaka Miyazaki and George R.R. Martin.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Create Your Own Character",
+            "description": "In addition to customizing your character's appearance, you can freely combine weapons, armor pieces, and magic to create your own unique build.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_e80a907c2e3d6e5d3df01f2fdf7a53c4e1e7e6a0.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "An Epic Drama Born from a Myth",
+            "description": "A multilayered story told in fragments, where each player discovers new depths with every playthrough.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Unique Online Play",
+            "description": "In addition to multiplayer, where you can directly connect with other players and travel together, the game supports a unique asynchronous online element.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/ss_fa47c2c6f48fd3a1af3ab52a96a94d5de9b0ef9c.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-er-01",
+          "username": "TarnishedOne",
+          "userRating": 5,
+          "comment": "FromSoftware's magnum opus. The open world design is revolutionary for the souls genre.",
+          "date": "2026-01-05"
+        },
+        {
+          "reviewId": "rev-er-02",
+          "username": "SoulsBorne_Fan",
+          "userRating": 4.5,
+          "comment": "Incredible game, but Shadow of the Erdtree DLC pushes it to perfection.",
+          "date": "2026-03-11"
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk-2077",
+      "title": "Cyberpunk 2077",
+      "price": 39.99,
+      "oldPrice": 59.99,
+      "rating": 4.5,
+      "tags": ["Hot", "Sale"],
+      "smallDescription": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as V, a mercenary outlaw going after a one-of-a-kind implant.",
+      "genre": "RPG",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 18",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
+        "editions": ["Standard Edition", "Ultimate Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2020-12-10",
+        "publisher": "CD Projekt",
+        "developer": "CD Projekt Red",
+        "languages": ["English", "French", "German", "Spanish", "Polish", "Russian", "Japanese"],
+        "audio": ["English", "French", "German", "Polish", "Japanese"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/ss_c9a699c3d37fbb3e0e0b25c09d13bd48e2a1fed2.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/ss_fbc8a26ed8e01e69a00bde7d3fca2aff15ee25fa.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/ss_b7a05cf5e7e3e7e7b8c5df3e0b4e9a6e8b7e8c5e.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/BO8lX3hDU30",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Night City — A World of Endless Possibilities",
+            "description": "Night City is packed with things to do and places to visit. You can take on quests, explore districts, infiltrate corpo compounds, or just cruise the neon-lit streets.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Play Your Way",
+            "description": "Go in guns blazing, hack your way through security systems, or talk your way out of trouble. Your build, your playstyle.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/ss_c9a699c3d37fbb3e0e0b25c09d13bd48e2a1fed2.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "A Story of Survival",
+            "description": "Become V, a mercenary with a mysterious chip that may give immortality but also threatens to erase your identity.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Phantom Liberty Expansion",
+            "description": "A spy-thriller adventure in Dogtown with Idris Elba, featuring new gameplay systems, weapons, and a brand new district to explore.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/ss_fbc8a26ed8e01e69a00bde7d3fca2aff15ee25fa.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-cp-01",
+          "username": "NightCityVet",
+          "userRating": 5,
+          "comment": "After all the patches and Phantom Liberty, this is one of the best RPGs ever made.",
+          "date": "2026-01-20"
+        },
+        {
+          "reviewId": "rev-cp-02",
+          "username": "EdgerunnersMax",
+          "userRating": 4,
+          "comment": "Rough launch but the 2.0 update transformed this game entirely. Story is phenomenal.",
+          "date": "2026-02-08"
+        }
+      ]
+    },
+    {
+      "id": "hogwarts-legacy",
+      "title": "Hogwarts Legacy",
+      "price": 49.99,
+      "oldPrice": 69.99,
+      "rating": 4.5,
+      "tags": ["Bestseller", "Hot"],
+      "smallDescription": "Experience Hogwarts in the 1800s. Your character is a student who holds the key to an ancient secret that threatens to tear the wizarding world apart.",
+      "genre": "RPG",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 12",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "editions": ["Standard Edition", "Deluxe Edition", "Collector's Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-02-10",
+        "publisher": "Warner Bros. Games",
+        "developer": "Avalanche Software",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese"],
+        "audio": ["English", "French", "German"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/ss_a7b8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/BtyBjOW8sGY",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Live the Unwritten",
+            "description": "Be at the center of your own adventure in the wizarding world. Discover a dangerous secret that predates the events of the books.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Explore a Stunning Open World",
+            "description": "Discover Hogwarts castle in extraordinary detail, from secret passages to ancient dungeons, plus explore the surrounding Highlands.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Master Magical Skills",
+            "description": "Develop your character's abilities by mastering spells, brewing potions, growing plants, and taming magical beasts.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Choose Your Path",
+            "description": "Decisions you make as a student will affect your journey, the alliances you form, and ultimately the fate of the wizarding world.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-hl-01",
+          "username": "WitchAndWizard",
+          "userRating": 5,
+          "comment": "Truly the Harry Potter game fans have been waiting for. The castle detail is mind-blowing.",
+          "date": "2026-01-15"
+        },
+        {
+          "reviewId": "rev-hl-02",
+          "username": "HufflepuffPride",
+          "userRating": 4,
+          "comment": "Great open world RPG set in a beautifully crafted wizarding world. Combat feels satisfying.",
+          "date": "2026-02-22"
+        }
+      ]
+    },
+    {
+      "id": "resident-evil-4-remake",
+      "title": "Resident Evil 4 Remake",
+      "price": 44.99,
+      "oldPrice": 59.99,
+      "rating": 4.9,
+      "tags": ["Award Winner", "Bestseller"],
+      "smallDescription": "Survival is just the beginning. Survival horror reimagined for 2023 — Leon S. Kennedy must rescue the President's kidnapped daughter.",
+      "genre": "Horror",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 18",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox Series X/S"],
+        "editions": ["Standard Edition", "Deluxe Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-03-24",
+        "publisher": "Capcom",
+        "developer": "Capcom",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Japanese"],
+        "audio": ["English", "French", "German", "Japanese"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/ss_e1a8e1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/ss_b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2d4e6.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/ss_d4e6a8b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/rcFarJACzx0",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "A Reimagined Classic",
+            "description": "The beloved classic is completely rebuilt from the ground up with modernized gameplay and a reimagined storyline.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Intense Survival Horror",
+            "description": "Manage your resources carefully and adapt your strategy in real time as terrifying enemies relentlessly pursue you.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/ss_e1a8e1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Vividly Detailed Graphics",
+            "description": "Experience the world of Resident Evil 4 like never before with stunning visuals powered by the RE Engine.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Expanded Story and Characters",
+            "description": "A deeper look into Leon and Ashley's relationship with additional scenes, expanded lore, and fully voiced dialogue.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/ss_b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2d4e6.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-re4-01",
+          "username": "LeonSKennedy",
+          "userRating": 5,
+          "comment": "The perfect remake. Everything that made the original great, elevated to modern standards.",
+          "date": "2026-01-30"
+        },
+        {
+          "reviewId": "rev-re4-02",
+          "username": "HorrorGamePro",
+          "userRating": 5,
+          "comment": "Capcom absolutely nailed it. Best survival horror game in years.",
+          "date": "2026-03-05"
+        }
+      ]
+    },
+    {
+      "id": "alan-wake-2",
+      "title": "Alan Wake 2",
+      "price": 49.99,
+      "oldPrice": 59.99,
+      "rating": 4.7,
+      "tags": ["Award Winner", "New"],
+      "smallDescription": "Ritualistic murders in a small town. An FBI agent looking for answers, and a writer trapped in a terrifying nightmare world.",
+      "genre": "Horror",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 18",
+      "options": {
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
+        "editions": ["Standard Edition", "Deluxe Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-10-27",
+        "publisher": "Epic Games Publishing",
+        "developer": "Remedy Entertainment",
+        "languages": ["English", "French", "German", "Spanish", "Finnish"],
+        "audio": ["English"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://cdn.cloudflare.steamstatic.com/steam/apps/1874388/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg",
+          "https://cdn.cloudflare.steamstatic.com/steam/apps/1874388/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg",
+          "https://cdn.cloudflare.steamstatic.com/steam/apps/1874388/ss_a7b8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/dlQ3FeNu5Yw",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Two Intertwined Storylines",
+            "description": "Play as FBI agent Saga Anderson hunting a killer in the real world, and as Alan Wake trying to write his way out of the Dark Place.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "A Living Nightmare",
+            "description": "Alan Wake 2 is a psychological thriller where the lines between fiction and reality blur in terrifying ways.",
+            "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1874388/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Remedy's Signature Storytelling",
+            "description": "Award-winning narrative design combined with stunning next-gen visuals and live-action sequences.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Survival Horror Gameplay",
+            "description": "Manage light and darkness, scavenge for resources, and use environmental hazards to survive monstrous encounters.",
+            "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1874388/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-aw2-01",
+          "username": "DarkPlaceWriter",
+          "userRating": 5,
+          "comment": "A masterpiece of storytelling and atmosphere. Remedy has done it again.",
+          "date": "2026-01-12"
+        },
+        {
+          "reviewId": "rev-aw2-02",
+          "username": "TwilightFanatic",
+          "userRating": 4.5,
+          "comment": "Visually stunning and narratively bold. One of the most unique games I have ever played.",
+          "date": "2026-02-19"
+        }
+      ]
+    },
+    {
+      "id": "marvels-spider-man-2",
+      "title": "Marvel's Spider-Man 2",
+      "price": 59.99,
+      "oldPrice": 69.99,
+      "rating": 4.8,
+      "tags": ["Bestseller", "Award Winner"],
+      "smallDescription": "Spider-Men Peter Parker and Miles Morales return for an exciting new adventure, facing Venom and Kraven the Hunter in a massive open-world New York City.",
+      "genre": "Action",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 16",
+      "options": {
+        "platforms": ["PS5"],
+        "editions": ["Standard Edition", "Digital Deluxe Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-10-20",
+        "publisher": "Sony Interactive Entertainment",
+        "developer": "Insomniac Games",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Japanese"],
+        "audio": ["English", "French", "German", "Spanish"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/7f9eed97e26804e7f40ed12ab8d5ea000c94ad4c86d6a63c.jpg",
+          "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/3b3c92f8e40d3e2e4e0b3e9a7e7c5e6b5e9a5c2d4e6a8b2.jpg",
+          "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/a5b8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/CXtfoRfEGIg",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Two Spider-Men, One City",
+            "description": "Seamlessly switch between Peter Parker and Miles Morales, each with their own unique abilities and skill trees.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "The Symbiote Threat",
+            "description": "Experience the transformation as Peter bonds with the symbiote suit, gaining incredible power at a terrible cost.",
+            "image": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/7f9eed97e26804e7f40ed12ab8d5ea000c94ad4c86d6a63c.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Bigger New York City",
+            "description": "Explore a Manhattan twice the size of any previous game in the franchise, including new boroughs and traversal mechanics.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Marvel-Grade Storytelling",
+            "description": "A cinematic narrative featuring iconic villains Venom and Kraven the Hunter, with breathtaking PS5-exclusive visuals.",
+            "image": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/3b3c92f8e40d3e2e4e0b3e9a7e7c5e6b5e9a5c2d4e6a8b2.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-sm2-01",
+          "username": "WebSlinger88",
+          "userRating": 5,
+          "comment": "Insomniac keeps raising the bar. Best superhero game of this generation.",
+          "date": "2026-01-25"
+        },
+        {
+          "reviewId": "rev-sm2-02",
+          "username": "MilesMoreHead",
+          "userRating": 4.5,
+          "comment": "The Venom storyline is phenomenal. Miles and Peter have incredible chemistry.",
+          "date": "2026-02-28"
+        }
+      ]
+    },
+    {
+      "id": "god-of-war-ragnarok",
+      "title": "God of War Ragnarök",
+      "price": 49.99,
+      "oldPrice": 69.99,
+      "rating": 4.9,
+      "tags": ["Award Winner", "Bestseller"],
+      "smallDescription": "Join Kratos and Atreus on a mythic journey for answers before the prophesied battle that will end the world.",
+      "genre": "Action",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 18",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5"],
+        "editions": ["Standard Edition", "Digital Deluxe Edition", "Collector's Edition", "Jotnar Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2022-11-09",
+        "publisher": "Sony Interactive Entertainment",
+        "developer": "Santa Monica Studio",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Japanese"],
+        "audio": ["English", "French", "German", "Spanish", "Japanese"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://image.api.playstation.com/vulcan/ap/rnd/202206/1718/8AMCqLbaWJy6Fzb70yJhkKP7.jpg",
+          "https://image.api.playstation.com/vulcan/ap/rnd/202206/1718/a8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6.jpg",
+          "https://image.api.playstation.com/vulcan/ap/rnd/202206/1718/c5e6b5e9a5d4e6a8b2c3e1b9e4e2e4e0b3e9a7e7.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/g1wr0DfV73E",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "The Nine Realms Await",
+            "description": "Embark on a mythic journey to all Nine Realms of Norse mythology, from the icy peaks of Midgard to the fiery depths of Muspelheim.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Evolving Kratos",
+            "description": "Witness Kratos grow from a god of war into a reluctant father, navigating the demands of family and the weight of a prophecy.",
+            "image": "https://image.api.playstation.com/vulcan/ap/rnd/202206/1718/8AMCqLbaWJy6Fzb70yJhkKP7.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Epic Combat Refined",
+            "description": "Master the Leviathan Axe, the Blades of Chaos, and new abilities to fight gods, monsters, and mythological creatures.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "A Father and Son Story",
+            "description": "Atreus comes into his own in this emotionally charged conclusion to the Norse saga, demanding answers Kratos is unwilling to give.",
+            "image": "https://image.api.playstation.com/vulcan/ap/rnd/202206/1718/a8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-gowr-01",
+          "username": "KratosDevotee",
+          "userRating": 5,
+          "comment": "A deeply emotional and thrilling conclusion to the Norse saga. Surpassed the original in every way.",
+          "date": "2026-02-01"
+        },
+        {
+          "reviewId": "rev-gowr-02",
+          "username": "AtreusFan",
+          "userRating": 5,
+          "comment": "The story is breathtaking. Kratos and Atreus's relationship is the heart of one of gaming's greatest narratives.",
+          "date": "2026-03-15"
+        }
+      ]
+    },
+    {
+      "id": "diablo-iv",
+      "title": "Diablo IV",
+      "price": 44.99,
+      "oldPrice": 69.99,
+      "rating": 4.4,
+      "tags": ["Bestseller", "Sale"],
+      "smallDescription": "Join the eternal war between Heaven and Hell. Lilith has returned to Sanctuary, and only the most steadfast of heroes can hold in the face of darkness.",
+      "genre": "RPG",
+      "gameMode": "Single-player, Online Multiplayer, Co-op",
+      "ageRestrictionBadge": "PEGI 18",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
+        "editions": ["Standard Edition", "Deluxe Edition", "Ultimate Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-06-06",
+        "publisher": "Blizzard Entertainment",
+        "developer": "Blizzard Entertainment",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Polish", "Korean", "Japanese"],
+        "audio": ["English", "French", "German", "Spanish", "Korean", "Japanese"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://blz-contentstack-images.akamaized.net/v3/assets/blt77f4425de611b362/bltd9add5099264ad84/648e9ba5e3af4d3c2e8d7423/d4-homepage-hero.jpg",
+          "https://blz-contentstack-images.akamaized.net/v3/assets/blt77f4425de611b362/blt52b8eeae9c81f7e3/63c6e2d70e5048119e0e73dc/diablo4-classes-hero.jpg",
+          "https://blz-contentstack-images.akamaized.net/v3/assets/blt77f4425de611b362/blte0a2cd42b8d71e2c/63c6e35f07c04611b84c2a84/d4-world-hero.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/jFtk_7tvAVc",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Return to Darkness",
+            "description": "The darkest, most expansive Diablo experience ever created. Explore an enormous open world filled with over 140 dungeons.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Five Mighty Classes",
+            "description": "Choose from Barbarian, Sorceress, Druid, Rogue, and Necromancer, each with deep customization and playstyle options.",
+            "image": "https://blz-contentstack-images.akamaized.net/v3/assets/blt77f4425de611b362/blt52b8eeae9c81f7e3/63c6e2d70e5048119e0e73dc/diablo4-classes-hero.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Endless Endgame",
+            "description": "Push into Nightmare Dungeons, take on World Bosses, earn Season rewards, and keep min-maxing your perfect build.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Cross-Platform Co-op",
+            "description": "Play with up to 4 friends across all platforms with full cross-play and cross-progression support.",
+            "image": "https://blz-contentstack-images.akamaized.net/v3/assets/blt77f4425de611b362/blt77f4425de611b362/648e9ba5e3af4d3c2e8d7423/d4-homepage-hero.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-d4-01",
+          "username": "SanctuarySlayer",
+          "userRating": 4,
+          "comment": "Incredible atmosphere and great loot loop. Season content has greatly improved the endgame.",
+          "date": "2026-01-18"
+        },
+        {
+          "reviewId": "rev-d4-02",
+          "username": "NecroKing",
+          "userRating": 4.5,
+          "comment": "The Necromancer class is the most satisfying to play. Graphics are stunning.",
+          "date": "2026-03-02"
+        }
+      ]
+    },
+    {
+      "id": "forza-horizon-5",
+      "title": "Forza Horizon 5",
+      "price": 44.99,
+      "oldPrice": 59.99,
+      "rating": 4.8,
+      "tags": ["Bestseller", "Award Winner"],
+      "smallDescription": "Your Ultimate Horizon Adventure awaits! Explore the vibrant open world landscapes of Mexico with limitless, fun driving action in hundreds of the world's greatest cars.",
+      "genre": "Racing",
+      "gameMode": "Single-player, Multiplayer",
+      "ageRestrictionBadge": "PEGI 3",
+      "options": {
+        "platforms": ["PC", "Xbox One", "Xbox Series X/S", "PS5"],
+        "editions": ["Standard Edition", "Premium Edition", "Premium Add-Ons Bundle"]
+      },
+      "specifications": {
+        "releaseDate": "2021-11-09",
+        "publisher": "Xbox Game Studios",
+        "developer": "Playground Games",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Japanese", "Chinese"],
+        "audio": ["English", "French", "German", "Spanish"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/ss_a7b8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/btdtkN00O70",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Mexico: The Greatest Horizon Yet",
+            "description": "Explore the largest and most diverse Horizon map ever built, from lush jungle to arid desert, volcanic highlands to golden beaches.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Hundreds of Cars",
+            "description": "Choose from over 500 cars and drive them all in gorgeous 4K detail with ray tracing support on PC and Xbox Series X.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Dynamic Seasons",
+            "description": "Experience the world transform with seasonal content updates — every week brings new events, rewards, and challenges.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Multiplayer & Co-op",
+            "description": "Race, explore, and create together with friends in online multiplayer, from ranked racing to open convoy exploration.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-fh5-01",
+          "username": "SpeedDemon2077",
+          "userRating": 5,
+          "comment": "The best open-world racing game ever made. Mexico is a gorgeous playground.",
+          "date": "2026-01-22"
+        },
+        {
+          "reviewId": "rev-fh5-02",
+          "username": "RacingPurePro",
+          "userRating": 4.5,
+          "comment": "Incredible car variety and stunning visuals. Seasonal events keep me coming back every week.",
+          "date": "2026-03-07"
+        }
+      ]
+    },
+    {
+      "id": "cities-skylines-2",
+      "title": "Cities: Skylines II",
+      "price": 39.99,
+      "oldPrice": 49.99,
+      "rating": 3.8,
+      "tags": ["New"],
+      "smallDescription": "Build and manage the city of your dreams. Create the most realistic and complex cities in any city-building game to date.",
+      "genre": "Simulation",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 3",
+      "options": {
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
+        "editions": ["Standard Edition", "Ultimate Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-10-24",
+        "publisher": "Paradox Interactive",
+        "developer": "Colossal Order",
+        "languages": ["English", "French", "German", "Spanish", "Polish", "Russian", "Japanese", "Chinese"],
+        "audio": []
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/ss_b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2d4e6.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/ss_d4e6a8b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/WdD66WGBVHM",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "City Building Evolved",
+            "description": "A fully realized transport network, an active economy, and detailed city simulations that react to your every decision.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Living Cities",
+            "description": "Every citizen has a simulated life — jobs, commutes, homes, and leisure — creating a truly living urban environment.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Unprecedented Scale",
+            "description": "Build cities up to 159 sq. km in size, across diverse map tiles including farmland, coastlines, and mountain ranges.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Deep Economy System",
+            "description": "Balance budgets, manage city services, set policies, and navigate the complex economics of a growing metropolis.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/949230/ss_b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2d4e6.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-cs2-01",
+          "username": "UrbanPlanner",
+          "userRating": 4,
+          "comment": "The simulation depth is unmatched. It needs optimization patches but the foundation is phenomenal.",
+          "date": "2026-01-08"
+        },
+        {
+          "reviewId": "rev-cs2-02",
+          "username": "MayorForLife",
+          "userRating": 3.5,
+          "comment": "Great concept with deep systems, but performance issues at launch were disappointing. Getting better with updates.",
+          "date": "2026-02-12"
+        }
+      ]
+    },
+    {
+      "id": "hollow-knight-silksong",
+      "title": "Hollow Knight: Silksong",
+      "price": 29.99,
+      "oldPrice": null,
+      "rating": 4.9,
+      "tags": ["New", "Indie"],
+      "smallDescription": "Hornet, princess-protector of Hallownest, is captured and taken to a vast kingdom above. She must battle her way through treacherous enemies and discover the secrets of this new world.",
+      "genre": "Indie",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 7",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "editions": ["Standard Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2025-09-04",
+        "publisher": "Team Cherry",
+        "developer": "Team Cherry",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Japanese", "Chinese"],
+        "audio": []
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://cdn.akamai.steamstatic.com/steam/apps/1030300/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg",
+          "https://cdn.akamai.steamstatic.com/steam/apps/1030300/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg",
+          "https://cdn.akamai.steamstatic.com/steam/apps/1030300/ss_a7b8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/SyyNDebPKQE",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "A New Hero, A New Kingdom",
+            "description": "Play as Hornet, sewing-needle in hand, in an enormous new kingdom filled with silk, traps, and dangerous creatures.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "150+ New Enemies and Bosses",
+            "description": "Face an enormous cast of new enemies and epic boss encounters across a beautiful hand-drawn world.",
+            "image": "https://cdn.akamai.steamstatic.com/steam/apps/1030300/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Metroidvania Perfected",
+            "description": "Discover upgrades, unlock abilities, and explore interconnected zones filled with secrets and lore.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Handcrafted Artistry",
+            "description": "Every frame hand-animated, every room hand-painted. A visual and auditory masterpiece from Team Cherry.",
+            "image": "https://cdn.akamai.steamstatic.com/steam/apps/1030300/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-hks-01",
+          "username": "BugKingdomFan",
+          "userRating": 5,
+          "comment": "Worth every year of waiting. Hornet is a fantastic protagonist and the gameplay is sublime.",
+          "date": "2026-01-04"
+        },
+        {
+          "reviewId": "rev-hks-02",
+          "username": "SilkTracer",
+          "userRating": 5,
+          "comment": "Team Cherry did the impossible — they made a sequel that surpasses the original.",
+          "date": "2026-02-16"
+        }
+      ]
+    },
+    {
+      "id": "stardew-valley",
+      "title": "Stardew Valley",
+      "price": 13.99,
+      "oldPrice": null,
+      "rating": 5.0,
+      "tags": ["Indie", "Bestseller"],
+      "smallDescription": "You've inherited your grandfather's old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life.",
+      "genre": "Simulation",
+      "gameMode": "Single-player, Multiplayer",
+      "ageRestrictionBadge": "PEGI 3",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch", "iOS", "Android"],
+        "editions": ["Standard Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2016-02-26",
+        "publisher": "ConcernedApe",
+        "developer": "ConcernedApe",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Russian", "Japanese", "Chinese", "Korean"],
+        "audio": []
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_cc6ba4c99afdf75cc9f38d91e6cbdcdbae4f9e29.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_6da2e4ef96c7e5ed6e8e6ddac3c5c9b9d4c9c4b4.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3e1.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/ot7uXNQskhs",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Build the Farm of Your Dreams",
+            "description": "Clear land, grow crops, raise animals, and build the perfect farm across multiple seasons with tons of variety.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "A Thriving Community",
+            "description": "Befriend the 30+ unique villagers of Pelican Town, complete quests, and even find romance.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_cc6ba4c99afdf75cc9f38d91e6cbdcdbae4f9e29.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Explore the Mines",
+            "description": "Venture into procedurally generated mines filled with monsters, treasure, and resources to craft powerful tools.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Online Multiplayer",
+            "description": "Work the land together with up to 3 other players in co-op farm mode — share chores, build together, and celebrate the seasons.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/ss_6da2e4ef96c7e5ed6e8e6ddac3c5c9b9d4c9c4b4.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-sv-01",
+          "username": "FarmerJohn",
+          "userRating": 5,
+          "comment": "One of the most relaxing and rewarding games ever created. A masterclass in cozy game design.",
+          "date": "2026-01-02"
+        },
+        {
+          "reviewId": "rev-sv-02",
+          "username": "CropQueen",
+          "userRating": 5,
+          "comment": "500 hours in and still discovering new things. ConcernedApe continues to add free content.",
+          "date": "2026-03-09"
+        }
+      ]
+    },
+    {
+      "id": "celeste",
+      "title": "Celeste",
+      "price": 19.99,
+      "oldPrice": null,
+      "rating": 4.9,
+      "tags": ["Award Winner", "Indie"],
+      "smallDescription": "Help Madeline survive her inner demons on her journey to the top of Celeste Mountain in this challenging but rewarding precision platformer.",
+      "genre": "Indie",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 7",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "editions": ["Standard Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2018-01-25",
+        "publisher": "Maddy Makes Games",
+        "developer": "Maddy Thorson, Noel Berry",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Russian", "Japanese"],
+        "audio": []
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/ss_fdfe373e88ab1d7cd7381bbc44024a50c978c1c4.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/ss_b4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3e1b9.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/ss_e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/70d9irlxiB4",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "A Story About Mental Health",
+            "description": "Explore a heartfelt narrative about anxiety and self-doubt through Madeline's challenging mountain climb.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Precision Platforming Excellence",
+            "description": "700+ handcrafted screens of tight, responsive platforming with an Assist Mode for players of all skill levels.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/ss_fdfe373e88ab1d7cd7381bbc44024a50c978c1c4.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Award-Winning Soundtrack",
+            "description": "A gorgeous original score by Lena Raine that shifts dynamically to match Madeline's emotional state.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Hidden Depths",
+            "description": "Discover B-Sides, C-Sides, and the insanely challenging Chapter 9 for players who want to truly push their limits.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/ss_b4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3e1b9.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-cel-01",
+          "username": "PlatformingPro",
+          "userRating": 5,
+          "comment": "The perfect platformer. Challenging but always fair, with one of the most touching stories in gaming.",
+          "date": "2026-01-11"
+        },
+        {
+          "reviewId": "rev-cel-02",
+          "username": "MaddyFan",
+          "userRating": 5,
+          "comment": "This game helped me understand my own anxiety. A masterpiece in every way.",
+          "date": "2026-02-23"
+        }
+      ]
+    },
+    {
+      "id": "dead-by-daylight",
+      "title": "Dead by Daylight",
+      "price": 19.99,
+      "oldPrice": 29.99,
+      "rating": 4.0,
+      "tags": ["Hot", "Multiplayer"],
+      "smallDescription": "A multiplayer action horror game where one player is the Killer and the others are Survivors trying to escape. Based on iconic horror franchises.",
+      "genre": "Horror",
+      "gameMode": "Multiplayer",
+      "ageRestrictionBadge": "PEGI 18",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch", "iOS", "Android"],
+        "editions": ["Standard Edition", "Deluxe Edition", "Ultimate Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2016-06-14",
+        "publisher": "Behaviour Interactive",
+        "developer": "Behaviour Interactive",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Japanese", "Chinese", "Korean"],
+        "audio": ["English"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/ss_b4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3e1b9.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/ss_e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/ss_a5d4e6a8b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/9kE4H0m6AOc",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "1 vs 4 Asymmetric Horror",
+            "description": "One player controls an iconic Killer while four Survivors scramble to repair generators and escape — tense, terrifying fun.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Iconic Horror Icons",
+            "description": "Play as or against licensed killers including Michael Myers, Freddy Krueger, Ghostface, Pyramid Head, and many more.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/ss_b4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3e1b9.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Constant New Content",
+            "description": "Regular chapter updates bring new Killers, Survivors, maps, and gameplay mechanics to keep every match fresh.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Cross-Platform Play",
+            "description": "Play with friends across all platforms with cross-play support, expanding the player pool and reducing wait times.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/381210/ss_e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-dbd-01",
+          "username": "HookMaster3000",
+          "userRating": 4,
+          "comment": "Best asymmetric horror game on the market. The licensed characters make every match thrilling.",
+          "date": "2026-01-17"
+        },
+        {
+          "reviewId": "rev-dbd-02",
+          "username": "SurvivorMain",
+          "userRating": 4,
+          "comment": "Terrifying when you're losing, exhilarating when you escape. Addictive multiplayer horror.",
+          "date": "2026-03-04"
+        }
+      ]
+    },
+    {
+      "id": "dave-the-diver",
+      "title": "Dave the Diver",
+      "price": 19.99,
+      "oldPrice": null,
+      "rating": 4.8,
+      "tags": ["Hot", "Indie", "Award Winner"],
+      "smallDescription": "A casual sushi restaurant management RPG adventure. Dive into the Blue Hole to catch fish by day, then manage a thriving sushi restaurant by night.",
+      "genre": "Casual",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 12",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Nintendo Switch", "iOS", "Android"],
+        "editions": ["Standard Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-06-28",
+        "publisher": "MINTROCKET",
+        "developer": "MINTROCKET",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Japanese", "Chinese", "Korean"],
+        "audio": ["English", "Japanese", "Korean"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1868140/ss_cc6ba4c99afdf75cc9f38d91e6cbdcdbae4f9e29.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1868140/ss_6da2e4ef96c7e5ed6e8e6ddac3c5c9b9d4c9c4b4.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1868140/ss_b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3e1.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/f9N-1iNP5b8",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Dive, Catch, Serve",
+            "description": "Explore the ever-changing Blue Hole during the day to catch exotic fish, then use them to craft dishes for your sushi restaurant at night.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Vast Underwater World",
+            "description": "The Blue Hole changes depth and layout every dive, filled with hundreds of species of marine life and hidden dangers.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1868140/ss_cc6ba4c99afdf75cc9f38d91e6cbdcdbae4f9e29.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Restaurant Management",
+            "description": "Hire staff, upgrade your kitchen, design the menu, and keep your customers happy in charming restaurant sim gameplay.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "A Rich Story",
+            "description": "Unravel the mysteries of the Blue Hole alongside a colorful cast of characters in a surprisingly deep narrative.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1868140/ss_6da2e4ef96c7e5ed6e8e6ddac3c5c9b9d4c9c4b4.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-dtd-01",
+          "username": "OceanChef",
+          "userRating": 5,
+          "comment": "The most charming surprise of 2023. I could not stop playing this addictive adventure.",
+          "date": "2026-01-06"
+        },
+        {
+          "reviewId": "rev-dtd-02",
+          "username": "DiveDeep99",
+          "userRating": 4.5,
+          "comment": "Unique blend of genres that works incredibly well. Dave is one of gaming's most lovable protagonists.",
+          "date": "2026-02-10"
+        }
+      ]
+    },
+    {
+      "id": "lies-of-p",
+      "title": "Lies of P",
+      "price": 44.99,
+      "oldPrice": 59.99,
+      "rating": 4.5,
+      "tags": ["Hot", "New"],
+      "smallDescription": "Lies of P is a dark, punishing Soulslike where Pinocchio must traverse a crumbling Belle Époque city overrun by mad puppets.",
+      "genre": "Action",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 16",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
+        "editions": ["Standard Edition", "Deluxe Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-09-19",
+        "publisher": "Neowiz",
+        "developer": "Round8 Studio",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Japanese", "Chinese", "Korean"],
+        "audio": ["English", "Korean", "Japanese"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/ss_a7b8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/3Xc3v_qvp_E",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "A Dark Reimagining",
+            "description": "Experience the classic tale of Pinocchio through a grim Soulslike lens, where your lies shape your fate.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Weapon Assembly System",
+            "description": "Mix and match blade and handle parts from hundreds of weapons to create your perfect custom arsenal.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "Lies Have Consequences",
+            "description": "Choose to lie or tell the truth in key moments — your choices affect the story, items you receive, and the ending.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "A Stunning Belle Époque World",
+            "description": "Traverse the gorgeous and horrifying city of Krat, filled with gothic architecture and grotesque puppet enemies.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1627720/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-lop-01",
+          "username": "SoulsVeteran",
+          "userRating": 4.5,
+          "comment": "Easily one of the best Soulslike games not made by FromSoftware. Incredible combat feel.",
+          "date": "2026-01-28"
+        },
+        {
+          "reviewId": "rev-lop-02",
+          "username": "PuppetSlayer",
+          "userRating": 4.5,
+          "comment": "The weapon assembly system is genius. Visually gorgeous and brutally challenging.",
+          "date": "2026-03-13"
+        }
+      ]
+    },
+    {
+      "id": "sea-of-stars",
+      "title": "Sea of Stars",
+      "price": 32.99,
+      "oldPrice": null,
+      "rating": 4.6,
+      "tags": ["Award Winner", "Indie"],
+      "smallDescription": "A turn-based RPG inspired by the classics, telling the story of two Children of the Solstice who combine the power of the sun and moon to perform Eclipse Magic.",
+      "genre": "RPG",
+      "gameMode": "Single-player, Co-op",
+      "ageRestrictionBadge": "PEGI 7",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "editions": ["Standard Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2023-08-29",
+        "publisher": "Sabotage Studio",
+        "developer": "Sabotage Studio",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Japanese", "Chinese"],
+        "audio": []
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/ss_cc6ba4c99afdf75cc9f38d91e6cbdcdbae4f9e29.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/ss_6da2e4ef96c7e5ed6e8e6ddac3c5c9b9d4c9c4b4.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/ss_e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/3OFwCZQb9Kw",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Classic JRPG Reinvented",
+            "description": "A love letter to 16-bit RPGs with modernized turn-based combat, beautiful pixel art, and a sweeping musical score.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Timed Hit Combat",
+            "description": "Hitting the button at the right moment enhances your attacks and blocks enemy damage — satisfying skill-based combat.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/ss_cc6ba4c99afdf75cc9f38d91e6cbdcdbae4f9e29.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "A World Worth Exploring",
+            "description": "Sail across a vast world, solve puzzles, discover hidden ruins, and interact with a rich cast of characters.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Relic System",
+            "description": "Customize difficulty and gameplay style with a flexible Relic system that lets you tailor the experience to your preferences.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1244090/ss_6da2e4ef96c7e5ed6e8e6ddac3c5c9b9d4c9c4b4.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-sos-01",
+          "username": "RetroRPGLover",
+          "userRating": 5,
+          "comment": "Captured the magic of classic JRPGs while feeling completely modern. The music is incredible.",
+          "date": "2026-01-14"
+        },
+        {
+          "reviewId": "rev-sos-02",
+          "username": "PixelArtFan",
+          "userRating": 4.5,
+          "comment": "Gorgeous pixel art and satisfying turn-based combat. One of the best indie RPGs in years.",
+          "date": "2026-02-27"
+        }
+      ]
+    },
+    {
+      "id": "lies-of-the-mind-pacific-drive",
+      "title": "Pacific Drive",
+      "price": 29.99,
+      "oldPrice": null,
+      "rating": 4.3,
+      "tags": ["New", "Indie"],
+      "smallDescription": "Pacific Drive is a first-person driving survival game where your car is your only companion on a harrowing journey through the exclusion zone of the Pacific Northwest.",
+      "genre": "Adventure",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 12",
+      "options": {
+        "platforms": ["PC", "PS5"],
+        "editions": ["Standard Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2024-02-22",
+        "publisher": "Kepler Interactive",
+        "developer": "Ironwood Studios",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Japanese"],
+        "audio": ["English"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1458140/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1458140/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1458140/ss_a7b8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/cS8jXKfBaIE",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "Your Car, Your Companion",
+            "description": "Maintain, customize, and rely on your station wagon as you venture deeper into the dangerous Olympic Exclusion Zone.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Survival Driving",
+            "description": "Scavenge resources, craft upgrades, and manage car systems on the fly as anomalies and dangers escalate around you.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1458140/ss_e1b8c1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "A Mysterious Zone",
+            "description": "Unravel the mysteries of the exclusion zone across eerily beautiful and procedurally arranged Pacific Northwest environments.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Deep Crafting Systems",
+            "description": "Build and upgrade your garage between runs to prepare better equipment and unlock new tools for your journeys.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1458140/ss_91f8e2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-pd-01",
+          "username": "RoadWarrior",
+          "userRating": 4,
+          "comment": "One of the most unique survival games in years. The bond with your car is genuinely charming.",
+          "date": "2026-01-20"
+        },
+        {
+          "reviewId": "rev-pd-02",
+          "username": "AnomalyHunter",
+          "userRating": 4.5,
+          "comment": "Atmospheric, tense, and full of mystery. The Pacific Northwest setting is hauntingly beautiful.",
+          "date": "2026-02-15"
+        }
+      ]
+    },
+    {
+      "id": "hades",
+      "title": "Hades",
+      "price": 24.99,
+      "oldPrice": null,
+      "rating": 5.0,
+      "tags": ["Award Winner", "Bestseller"],
+      "smallDescription": "Defy the god of the dead as you hack and slash your way out of the Underworld. An award-winning roguelike action game from Supergiant Games.",
+      "genre": "Indie",
+      "gameMode": "Single-player",
+      "ageRestrictionBadge": "PEGI 12",
+      "options": {
+        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch", "iOS"],
+        "editions": ["Standard Edition"]
+      },
+      "specifications": {
+        "releaseDate": "2020-09-17",
+        "publisher": "Supergiant Games",
+        "developer": "Supergiant Games",
+        "languages": ["English", "French", "German", "Spanish", "Italian", "Portuguese", "Russian", "Japanese", "Chinese"],
+        "audio": ["English"]
+      },
+      "detailedDescription": {
+        "topGalleryImages": [
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/ss_b4d2f4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3e1b9.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/ss_e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3.1920x1080.jpg",
+          "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/ss_a5d4e6a8b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9.1920x1080.jpg"
+        ],
+        "mainVideoUrl": "https://www.youtube.com/embed/H_jb1J_0IBM",
+        "features": [
+          {
+            "id": "feat-1",
+            "title": "A Story That Grows With Each Run",
+            "description": "Every escape attempt reveals new story, dialogue, and character depth. The narrative never gets old across hundreds of runs.",
+            "image": null
+          },
+          {
+            "id": "feat-2",
+            "title": "Insanely Satisfying Combat",
+            "description": "Choose from six weapons and dozens of boon combinations from Olympian gods to carve your perfect path through the Underworld.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/ss_b4d2f4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3e1b9.1920x1080.jpg"
+          },
+          {
+            "id": "feat-3",
+            "title": "A Cast of Legends",
+            "description": "Meet and build relationships with a richly voiced cast of gods, monsters, and heroes from Greek mythology.",
+            "image": null
+          },
+          {
+            "id": "feat-4",
+            "title": "Stunning Art Direction",
+            "description": "Greg Kasavin's writing and Jen Zee's distinctive art give Hades a visual identity unlike anything else in the genre.",
+            "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1145360/ss_e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5d4e6a8b2c3.1920x1080.jpg"
+          }
+        ]
+      },
+      "reviews": [
+        {
+          "reviewId": "rev-hades-01",
+          "username": "ZagreusMain",
+          "userRating": 5,
+          "comment": "Supergiant's magnum opus. Every run is satisfying and the story is endlessly compelling.",
+          "date": "2026-01-03"
+        },
+        {
+          "reviewId": "rev-hades-02",
+          "username": "RoguelikeKing",
+          "userRating": 5,
+          "comment": "The best roguelike ever made. Dialogue, art, music, and gameplay are all flawless.",
+          "date": "2026-03-16"
+        }
+      ]
+    }
+  ]

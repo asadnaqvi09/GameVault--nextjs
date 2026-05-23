@@ -77,7 +77,7 @@ function Hero_Section() {
 
   return (
     <section className='flex flex-col lg:flex-row gap-2'>
-      <div className="hero_banner w-full lg:w-[75%] relative rounded-xl overflow-hidden shadow-xl" ref={emblaRef}>
+      <div className="hero_banner w-full md:w-[75%] relative rounded-xl overflow-hidden shadow-xl" ref={emblaRef}>
         <div className="flex h-full cursor-grab active:cursor-grabbing">
           {HERO_SLIDES.map((slide, index) => (
             <div className="flex-[0_0_100%] min-w-0 relative" key={slide.id}>
@@ -97,10 +97,10 @@ function Hero_Section() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="relative z-10 p-10 flex flex-col justify-center h-full max-w-md text-white"
                   >
-                    <Image 
-                    src={slide.logo}
-                    alt={slide.title}
-                    className='w-46 h-16 object-fit mb-4'
+                    <Image
+                      src={slide.logo}
+                      alt={slide.title}
+                      className='w-46 h-16 object-fit mb-4'
                     />
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-sm text-gray-300">Available on:</span>
