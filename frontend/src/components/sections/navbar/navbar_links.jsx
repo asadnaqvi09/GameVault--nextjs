@@ -9,7 +9,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 const navLinks = [
     { id: 1, name: "Home", link: "/" },
     { id: 2, name: "Games", link: "/games" },
-    { id: 3, name: "Sale", link: "/sale" },
+    { id: 3, name: "Sale", link: "/on-sale" },
 ];
 
 export default function NavLinks({ isGamesOpen, onGamesEnter, onGamesLeave }) {

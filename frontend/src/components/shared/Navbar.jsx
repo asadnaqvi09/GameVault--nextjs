@@ -35,7 +35,7 @@ export default function Navbar() {
     const mobileMenu = [
         { name: "Home", link: "/" },
         { name: "Games", link: "/games" },
-        { name: "Sale", link: "/sale" },
+        { name: "Sale", link: "/on-sale" },
         { name: "About Us", link: "/about-us" },
         { name: "Contact Us", link: "/contact" },
         { name: "Wishlist", link: "/wishlist" },

@@ -42,10 +42,10 @@ function Footer() {
                 <div className="links-column flex flex-col gap-4">
                     <h4 className="column-title text-base font-bold text-gray-900">Useful Links</h4>
                     <ul className="links-list flex flex-col gap-2.5 text-sm text-gray-600">
-                        <li><Link href="/about" className="hover:text-[#6042ef] transition-colors">About Us</Link></li>
-                        <li><Link href="/contact" className="hover:text-[#6042ef] transition-colors">Contact Us</Link></li>
+                        <li><Link href="/about-us" className="hover:text-[#6042ef] transition-colors">About Us</Link></li>
+                        <li><Link href="/contact-us" className="hover:text-[#6042ef] transition-colors">Contact Us</Link></li>
                         <li><Link href="/sale" className="hover:text-[#6042ef] transition-colors">Sale</Link></li>
-                        <li><Link href="/blog" className="hover:text-[#6042ef] transition-colors">Blog</Link></li>
+                        <li><Link href="/blogs" className="hover:text-[#6042ef] transition-colors">Blog</Link></li>
                         <li><Link href="/faqs" className="hover:text-[#6042ef] transition-colors">FAQs</Link></li>
                     </ul>
                 </div>

@@ -1,19 +1,23 @@
 "use client";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+import { useWishlist } from "@/hooks/useWishlist";
+import { Heart, ShoppingCart } from "lucide-react";
 
-export function WishlistButton({ count = 0 }) {
+export function WishlistButton() {
+    const { wishlistCount } = useWishlist();
+
     return (
-        <button
-            className="text-[#222] flex items-center gap-1.5 hover:text-[#6C47FF] transition-colors duration-200 focus:outline-none"
+        <Link
+            href="/wishlist"
+            className="text-[#222] relative flex items-center hover:text-[#6C47FF] transition-colors duration-200 focus:outline-none"
             aria-label="Wishlist"
         >
-            <FontAwesomeIcon icon={faHeart} className="text-[20px]" />
-            <span className="text-sm font-semibold bg-gray-100 px-2 py-0.5 rounded-full text-gray-700 text-xs">
-                {count}
+            <Heart className="text-[20px]" />
+            <span className="absolute top-[-10px] right-[-8px] text-sm font-semibold bg-gray-100 px-2 py-0.5 rounded-full text-gray-700 text-xs">
+                {wishlistCount}
             </span>
-        </button>
+        </Link>
     );
 }
 
@@ -24,7 +28,7 @@ export function CartButton({ count = 0, total = "0.00", onOpen }) {
             className="flex items-center gap-2 text-[#222] hover:text-[#6C47FF] transition-colors duration-200 focus:outline-none"
             aria-label="Cart"
         >
-            <FontAwesomeIcon icon={faCartShopping} className="text-[20px]" />
+            <ShoppingCart className="text-[20px]" />
             <p className="hidden xl:block text-[14px] font-semibold text-gray-700">
                 {count} / <span className="text-[#222]">${total}</span>
             </p>

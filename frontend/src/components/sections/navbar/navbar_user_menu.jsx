@@ -2,14 +2,7 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faUser,
-    faChevronDown,
-    faUserShield,
-    faUserGear,
-    faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
+import { User, LogOut, Users, ArrowDownToLine } from 'lucide-react';
 
 export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggleDrawer, onCloseDrawer, onLogout }) {
     if (!isAuthenticated) {
@@ -19,7 +12,7 @@ export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggle
                 className="text-[#222] hover:text-[#6C47FF] transition-colors duration-200 flex items-center"
                 aria-label="Account"
             >
-                <FontAwesomeIcon icon={faUser} className="text-[20px]" />
+                <User className="text-[20px]" />
             </Link>
         );
     }
@@ -30,10 +23,9 @@ export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggle
                 onClick={onToggleDrawer}
                 className="text-[#222] hover:text-[#6C47FF] transition-colors duration-200 flex items-center gap-2 text-[14px] font-medium focus:outline-none py-2"
             >
-                <FontAwesomeIcon icon={faUser} className="text-[20px]" />
+                <User className="text-[20px]" />
                 <span className="hidden xl:inline max-w-[120px] truncate">{user?.userName || "Account"}</span>
-                <FontAwesomeIcon
-                    icon={faChevronDown}
+                <ArrowDownToLine
                     className={`text-[10px] text-gray-400 transition-transform duration-200 ${isDrawerOpen ? "rotate-180" : ""}`}
                 />
             </button>
@@ -60,7 +52,7 @@ export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggle
                                     onClick={onCloseDrawer}
                                     className="flex items-center gap-3 px-4 py-3 text-[14px] font-medium text-amber-600 hover:bg-amber-50 transition-colors w-full text-left"
                                 >
-                                    <FontAwesomeIcon icon={faUserShield} className="text-base text-amber-500" />
+                                    <Users className="text-base text-amber-500" />
                                     Admin Panel
                                 </Link>
                             ) : (
@@ -68,7 +60,7 @@ export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggle
                                     onClick={onCloseDrawer}
                                     className="flex items-center gap-3 px-4 py-3 text-[14px] font-medium text-gray-600 hover:bg-gray-50 transition-colors w-full text-left cursor-default"
                                 >
-                                    <FontAwesomeIcon icon={faUserGear} className="text-base text-gray-400" />
+                                    <User className="text-base text-gray-400" />
                                     My Profile
                                     <span className="text-[10px] bg-purple-100 text-[#6C47FF] px-1.5 py-0.2 rounded font-semibold ml-auto">
                                         Soon
@@ -82,7 +74,7 @@ export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggle
                                 onClick={onLogout}
                                 className="flex items-center gap-3 px-4 py-3 text-[14px] font-medium text-red-600 hover:bg-red-50 transition-colors w-full text-left focus:outline-none"
                             >
-                                <FontAwesomeIcon icon={faRightFromBracket} className="text-base text-red-400" />
+                                <LogOut className="text-base text-red-400" />
                                 Log Out
                             </button>
                         </motion.div>
