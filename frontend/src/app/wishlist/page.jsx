@@ -4,7 +4,7 @@ import React from 'react';
 import { useWishlist } from '@/hooks/useWishlist';
 import { X, CheckSquare, Square, Trash2 } from 'lucide-react';
 
-function WishlistPage() {
+export default function WishlistPage() {
     const {
         wishlistItems,
         selectedCount,
@@ -30,12 +30,10 @@ function WishlistPage() {
 
     return (
         <main className='py-6 px-4 gap-10 flex flex-col max-w-7xl mx-auto w-full'>
-            {/* Wishlist Header */}
             <div className="wishlist-header flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center border-b border-gray-200 pb-4">
                 <h1 className='text-2xl font-semibold uppercase tracking-wide text-gray-800'>
                     Your Products Wishlist ({wishlistItems.length})
                 </h1>
-
                 <div className="cta flex gap-3 w-full sm:w-auto">
                     {selectedCount > 0 && (
                         <button
@@ -54,19 +52,15 @@ function WishlistPage() {
                     </button>
                 </div>
             </div>
-
-            {/* Wishlist Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {wishlistItems.map((product) => {
                     const isCardSelected = isSelected(product.id);
-
                     return (
                         <div
                             key={product.id}
                             className={`group relative flex flex-col border rounded-lg overflow-hidden bg-white shadow-sm transition-all duration-200 ${isCardSelected ? 'border-blue-500 ring-2 ring-blue-500/20' : 'border-gray-200'
                                 }`}
                         >
-                            {/* Reference Image Actions Layout Bar */}
                             <div className="flex justify-between items-center px-3 py-2 bg-gray-50 border-b border-gray-100">
                                 <button
                                     onClick={() => removeOne(product.id)}
@@ -75,7 +69,6 @@ function WishlistPage() {
                                     <X size={14} />
                                     Remove
                                 </button>
-
                                 <button
                                     onClick={() => toggleSelect(product.id)}
                                     className="text-gray-400 hover:text-blue-600 transition-colors"
@@ -87,23 +80,18 @@ function WishlistPage() {
                                     )}
                                 </button>
                             </div>
-
-                            {/* Product Image Wrapper */}
                             <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
                                 {product.isHot && (
                                     <span className="absolute top-3 left-3 bg-white text-black text-xs font-bold px-2.5 py-1 rounded-full uppercase shadow-sm z-10">
                                         Hot
                                     </span>
                                 )}
-
                                 <img
                                     src={product.image || "/placeholder-game.jpg"}
                                     alt={product.title}
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
-
-                            {/* Product Details */}
                             <div className="p-4 flex flex-col gap-2 flex-grow">
                                 <div className="flex justify-between items-start gap-2">
                                     <h3 className="font-semibold text-lg text-gray-900 line-clamp-1">
@@ -116,7 +104,6 @@ function WishlistPage() {
                                         </div>
                                     )}
                                 </div>
-
                                 <button className="mt-auto w-full py-2.5 text-center text-sm font-semibold border border-gray-300 rounded hover:bg-gray-50 transition-colors">
                                     Select Options
                                 </button>
@@ -128,5 +115,3 @@ function WishlistPage() {
         </main>
     );
 }
-
-export default WishlistPage;

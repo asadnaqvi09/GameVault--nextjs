@@ -7,8 +7,8 @@ import { faGamepad } from "@fortawesome/free-solid-svg-icons";
 export default function NavbarLogo() {
     return (
         <Link href="/" className="flex items-center shrink-0">
-            <div className="text-xl font-black tracking-tight text-[#6C47FF] cursor-pointer">
-                <FontAwesomeIcon icon={faGamepad} className="text-xl mr-2" />GameVault
+            <div className="text-2xl font-bold tracking-tight text-gray-800 cursor-pointer">
+                <FontAwesomeIcon icon={faGamepad} className="text-2xl mr-2" />GameVault.
             </div>
         </Link>
     );

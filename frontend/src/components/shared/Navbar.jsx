@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 import { useAuth } from "@/hooks/useAuth";
-
 import NavbarLogo from "@/components/sections/navbar/navbar_logo";
 import NavLinks from "@/components/sections/navbar/navbar_links";
 import SocialIcons from "@/components/sections/navbar/navbar_socailIcons";

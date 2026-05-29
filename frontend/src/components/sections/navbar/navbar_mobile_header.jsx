@@ -8,8 +8,8 @@ export default function MobileHeader({ onMenuOpen, onCartOpen }) {
     return (
         <div className="lg:hidden flex flex-col w-full px-4 py-3 gap-3">
             <Link href="/" className="flex items-center justify-center shrink-0">
-                <div className="text-xl font-black tracking-tight text-[#6C47FF]">
-                    <FontAwesomeIcon icon={faGamepad} className="text-xl mr-2" />GameVault
+                <div className="text-2xl font-bold tracking-tight text-gray-800">
+                    <FontAwesomeIcon icon={faGamepad} className="text-2xl mr-2" />GameVault.
                 </div>
             </Link>
             <div className="flex items-center justify-between gap-4">

@@ -8,7 +8,7 @@ import Single_Game from "@/components/sections/landing_page/Single_Game";
 import Top_Sellers from "@/components/sections/landing_page/Top_Sellers";
 import { usePathname } from "next/navigation";
 
-export default function RouteLayout({ children }) {
+export default function HomePage({ children }) {
   const pathname = usePathname();
   const isDashboard = pathname?.startsWith("/dashboard");
 

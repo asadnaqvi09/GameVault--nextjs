@@ -1,13 +1,13 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faYoutube, faTiktok, faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faYoutube, faTiktok, faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 const socials = [
     { id: 1, icon: faInstagram, hover: "hover:bg-pink-500" },
     { id: 2, icon: faYoutube, hover: "hover:bg-red-500" },
     { id: 3, icon: faTiktok, hover: "hover:bg-black" },
-    { id: 4, icon: faDiscord, hover: "hover:bg-indigo-500" },
+    { id: 4, icon: faTwitter, hover: "hover:bg-sky-500" },
 ];
 
 export default function SocialIcons() {

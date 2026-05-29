@@ -84,7 +84,7 @@
       "gameMode": "Single-player, Online Multiplayer",
       "ageRestrictionBadge": "PEGI 16",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
+        "platforms": ["PS5","Xbox Series X/S"],
         "editions": ["Standard Edition", "Deluxe Edition", "Collector's Edition"]
       },
       "specifications": {
@@ -157,7 +157,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 18",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition", "Ultimate Edition"]
       },
       "specifications": {
@@ -230,7 +230,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 12",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition", "Deluxe Edition", "Collector's Edition"]
       },
       "specifications": {
@@ -303,7 +303,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 18",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox Series X/S"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition", "Deluxe Edition"]
       },
       "specifications": {
@@ -323,26 +323,26 @@
         "features": [
           {
             "id": "feat-1",
-            "title": "A Reimagined Classic",
-            "description": "The beloved classic is completely rebuilt from the ground up with modernized gameplay and a reimagined storyline.",
-            "image": null
+            "title": "Explore an unlimited galaxy",
+            "description": "The story of Cal Kestis continues in Star Wars Jedi: Survivor™, a third-person, galaxy-spanning, action-adventure game from Respawn Entertainment, developed in collaboration with Lucasfilm Games. This narratively driven, single-player title picks up 5 years after the events of Star Wars Jedi: Fallen Order™ and follows Cal’s increasingly desperate fight as the galaxy descends further into darkness. Pushed to the edges of the galaxy by the Empire, Cal will find himself surrounded by threats new and familiar",
+            "image": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/06/w-vgs-adventure-resident-evil-4.jpg"
           },
           {
             "id": "feat-2",
-            "title": "Intense Survival Horror",
-            "description": "Manage your resources carefully and adapt your strategy in real time as terrifying enemies relentlessly pursue you.",
+            "title": "Stand Against the Darkness",
+            "description": "Five years after the events of Star Wars Jedi Fallen Order™ Star Wars Jedi: Survivor follows Cal's increasingly desperate fight as the galaxy descends further into darkness. Pushed to the edges of the galaxy by the Empire, Cal will find himself surrounded by threats new and familiar.",
             "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/ss_e1a8e1e1f8e3d3e2e2e4e0b3e9a7e7c5e6b5e9a5.1920x1080.jpg"
           },
           {
             "id": "feat-3",
-            "title": "Vividly Detailed Graphics",
-            "description": "Experience the world of Resident Evil 4 like never before with stunning visuals powered by the RE Engine.",
-            "image": null
+            "title": "Continue Cal's jorney",
+            "description": "No longer a Padawan, Cal has come into his own and grown into a powerful Jedi Knight. Carrying the memories and expectations of the Jedi Order with him, his crusade against the Empire has only become more perilous.",
+            "image": "https://woodmart.xtemos.com/games/wp-content/uploads/sites/14/2023/05/wd-vgs-swj-description-2.jpg"
           },
           {
             "id": "feat-4",
-            "title": "Expanded Story and Characters",
-            "description": "A deeper look into Leon and Ashley's relationship with additional scenes, expanded lore, and fully voiced dialogue.",
+            "title": "Go beyond your training",
+            "description": "The cinematic combat system returns with additional Force abilities and new lightsaber fighting styles. Creatively leverage all these abilities and weapons to strategically take on an expanded host of enemies",
             "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/ss_b2c3e1b9e4e2e4e0b3e9a7e7c5e6b5e9a5c2d4e6.1920x1080.jpg"
           }
         ]
@@ -522,7 +522,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 18",
       "options": {
-        "platforms": ["PC", "PS4", "PS5"],
+        "platforms": ["PC", "PS5"],
         "editions": ["Standard Edition", "Digital Deluxe Edition", "Collector's Edition", "Jotnar Edition"]
       },
       "specifications": {
@@ -595,7 +595,7 @@
       "gameMode": "Single-player, Online Multiplayer, Co-op",
       "ageRestrictionBadge": "PEGI 18",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition", "Deluxe Edition", "Ultimate Edition"]
       },
       "specifications": {
@@ -668,7 +668,7 @@
       "gameMode": "Single-player, Multiplayer",
       "ageRestrictionBadge": "PEGI 3",
       "options": {
-        "platforms": ["PC", "Xbox One", "Xbox Series X/S", "PS5"],
+        "platforms": ["PC", "Xbox Series X/S", "PS5"],
         "editions": ["Standard Edition", "Premium Edition", "Premium Add-Ons Bundle"]
       },
       "specifications": {
@@ -814,7 +814,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 7",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition"]
       },
       "specifications": {
@@ -887,7 +887,7 @@
       "gameMode": "Single-player, Multiplayer",
       "ageRestrictionBadge": "PEGI 3",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch", "iOS", "Android"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition"]
       },
       "specifications": {
@@ -960,7 +960,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 7",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition"]
       },
       "specifications": {
@@ -1033,7 +1033,7 @@
       "gameMode": "Multiplayer",
       "ageRestrictionBadge": "PEGI 18",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch", "iOS", "Android"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition", "Deluxe Edition", "Ultimate Edition"]
       },
       "specifications": {
@@ -1106,7 +1106,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 12",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Nintendo Switch", "iOS", "Android"],
+        "platforms": ["PC", "PS5"],
         "editions": ["Standard Edition"]
       },
       "specifications": {
@@ -1179,7 +1179,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 16",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition", "Deluxe Edition"]
       },
       "specifications": {
@@ -1252,7 +1252,7 @@
       "gameMode": "Single-player, Co-op",
       "ageRestrictionBadge": "PEGI 7",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition"]
       },
       "specifications": {
@@ -1398,7 +1398,7 @@
       "gameMode": "Single-player",
       "ageRestrictionBadge": "PEGI 12",
       "options": {
-        "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S", "Nintendo Switch", "iOS"],
+        "platforms": ["PC", "PS5", "Xbox Series X/S"],
         "editions": ["Standard Edition"]
       },
       "specifications": {
