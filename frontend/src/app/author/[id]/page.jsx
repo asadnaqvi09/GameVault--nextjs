@@ -1,7 +1,8 @@
 import React from 'react'
 
-export default function AuthorPage() {
+export default async function AuthorPage({ params }) {
+    const { id } = await params
     return (
-        <div>page</div>
+        <div>This is single author details page {id}</div>
     )
 }
