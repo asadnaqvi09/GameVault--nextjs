@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import connectDB from './src/config/db.config.js';
 import authRoutes from './src/routes/user.routes.js';
+import genreRoutes from './src/routes/genre.routes.js';
 
 dotenv.config();
 connectDB();
@@ -29,7 +30,9 @@ app.get('/', (req,res) => {
         message: 'Welcome to the game server'
     })
 })
-app.use('/api/v1/auth', authRRoutes);
+app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/genre', genreRoutes);
+app.use('/api/v1/games', gameRoutes);
 
 app.listen(PORT, ()=> {
     console.log(`Server is running on port ${PORT}`);
