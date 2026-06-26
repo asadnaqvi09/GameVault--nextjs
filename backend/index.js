@@ -3,37 +3,45 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import compression from 'compression';
 import cookieParser from 'cookie-parser';
+import mongoSanitize from 'express-mongo-sanitize';
+import hpp from 'hpp';
 import connectDB from './src/config/db.config.js';
-import authRoutes from './src/routes/user.routes.js';
-import genreRoutes from './src/routes/genre.routes.js';
+import { appConfig } from './src/config/app.config.js';
+import apiRoutes from './src/routes/index.js';
+import { notFound, errorHandler } from './src/shared/middlewares/errorHandler.middleware.js';
 
 dotenv.config();
 connectDB();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: appConfig.clientUrl,
   credentials: true,
 }));
 app.use(cookieParser());
-app.use(morgan('dev'));
+app.use(compression());
+app.use(mongoSanitize());
+app.use(hpp());
 app.use(helmet());
+app.use(morgan('dev'));
 
-app.get('/', (req,res) => {
-    res.status(200).json({
-        success: true,
-        message: 'Welcome to the game server'
-    })
-})
-app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/genre', genreRoutes);
-app.use('/api/v1/games', gameRoutes);
+app.get('/', (_req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Welcome to the GameVault API server'
+  });
+});
 
-app.listen(PORT, ()=> {
-    console.log(`Server is running on port ${PORT}`);
-})
+app.use('/api/v1', apiRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
+
+app.listen(appConfig.port, () => {
+  console.log(`Server is running on port ${appConfig.port}`);
+});
