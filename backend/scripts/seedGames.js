@@ -24,7 +24,7 @@ const connectDB = async () => {
     throw new Error('DB_USERNAME and DB_PASSWORD must be set in .env');
   }
 
-  const uri = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.vfxqpnz.mongodb.net/`;
+  const uri = process.env.MONGO_URI;
   await mongoose.connect(uri);
   console.log('MongoDB connected for seeding');
 };

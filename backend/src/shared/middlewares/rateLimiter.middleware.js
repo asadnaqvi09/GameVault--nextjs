@@ -17,3 +17,17 @@ export const authLimiter = rateLimit({
     });
   }
 });
+
+export const reviewLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  handler: async (req, res) => {
+    await AuditLog.create({
+      action: 'RATE_LIMIT_EXCEEDED',
+      ipAddress: req.ip,
+      details: `Too many attempts on endpoint: ${req.originalUrl}`
+    });
+  }
+})

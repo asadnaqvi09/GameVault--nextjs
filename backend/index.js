@@ -25,8 +25,8 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.use(compression());
-app.use(mongoSanitize());
-app.use(hpp());
+// app.use(mongoSanitize());
+// app.use(hpp());
 app.use(helmet());
 app.use(morgan('dev'));
 

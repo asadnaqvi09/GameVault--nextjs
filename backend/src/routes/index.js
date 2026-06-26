@@ -2,7 +2,6 @@ import { Router } from 'express';
 import authRoutes from '../modules/auth/routes/auth.routes.js';
 import genreRoutes from '../modules/genre/routes/genre.routes.js';
 import gameRoutes from '../modules/games/routes/game.routes.js';
-import catalogRoutes from '../modules/catalog/routes/catalog.routes.js';
 import reviewRoutes from '../modules/reviews/routes/review.routes.js';
 import wishlistRoutes from '../modules/wishlist/routes/wishlist.routes.js';
 import cartRoutes from '../modules/cart/routes/cart.routes.js';
@@ -21,7 +20,6 @@ router.get('/health', (_req, res) => {
 router.use('/auth', authRoutes);
 router.use('/genre', genreRoutes);
 router.use('/games', gameRoutes);
-router.use('/catalog', catalogRoutes);
 router.use('/reviews', reviewRoutes);
 router.use('/wishlist', wishlistRoutes);
 router.use('/cart', cartRoutes);
