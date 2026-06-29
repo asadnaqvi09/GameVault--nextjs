@@ -1,27 +1,37 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
-const SmoothScroll = ({ children }) => {
-    useEffect(() => {
-        const lenis = new Lenis({
-            smooth: true,
-        });
+export default function SmoothScroll() {
+  const pathname = usePathname();
+  const lenisRef = useRef(null);
 
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
+  useEffect(() => {
+    const lenis = new Lenis({
+      autoRaf: true,
+      smoothWheel: true,
+    });
+    lenisRef.current = lenis;
+    return () => {
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
 
-        requestAnimationFrame(raf);
+  useEffect(() => {
+    const lenis = lenisRef.current;
+    if (!lenis) return;
+    const handleResize = () => lenis.resize();
+    handleResize();
+    const resizeTimer = setTimeout(handleResize, 350);
+    window.addEventListener("load", handleResize);
+    return () => {
+      clearTimeout(resizeTimer);
+      window.removeEventListener("load", handleResize);
+    };
+  }, [pathname]);
 
-        return () => {
-            lenis.destroy();
-        };
-    }, []);
-
-    return children;
-};
-
-export default SmoothScroll;
+  return null;
+}

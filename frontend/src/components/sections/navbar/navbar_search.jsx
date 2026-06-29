@@ -10,7 +10,7 @@ export default function SearchBar({ onOpen }) {
                 onClick={onOpen}
                 className="h-full w-full border-none px-5 text-[14px] outline-none text-gray-400 text-left transition-all cursor-pointer hover:bg-gray-50 flex items-center"
             >
-                Search for products
+                Search for games
             </button>
             <button
                 onClick={onOpen}

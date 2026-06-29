@@ -53,7 +53,7 @@ export default function ProductHeroSection({ game, prevGameId, nextGameId }) {
                             <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">{game.title}</h1>
                             <div className="flex items-center gap-2">
                                 <div className="flex items-center gap-0.5">{renderStars(game.rating || 4.5)}</div>
-                                <span className="text-xs font-semibold text-gray-400">({game.reviews?.length || 0} customer reviews)</span>
+                                <span className="text-xs font-semibold text-gray-400">({game.reviewCount || 0} customer reviews)</span>
                             </div>
                             <p className="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-xl">{game.smallDescription}</p>
                             <div className="grid grid-cols-3 gap-4 border-b border-gray-100 pb-5 pt-2">

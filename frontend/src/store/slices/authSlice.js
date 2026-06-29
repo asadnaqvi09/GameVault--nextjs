@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import * as authAPI from '../api/authApi';
+import { setToken, clearToken } from '../api/authApi';
+import { setAuthToken } from '../../lib/api/authRequest';
 
 export const register = createAsyncThunk(
   'auth/register',
@@ -72,17 +74,20 @@ const authSlice = createSlice({
       .addCase(login.fulfilled, (s, a) => {
         s.isLoading = false;
         s.accessToken = a.payload.accessToken;
-        authAPI.setToken(a.payload.accessToken);
+        setToken(a.payload.accessToken);
+        setAuthToken(a.payload.accessToken);
       })
       .addCase(refreshAccessToken.fulfilled, (s, a) => {
         s.accessToken = a.payload.accessToken;
         s.user = a.payload.user;
-        authAPI.setToken(a.payload.accessToken);
+        setToken(a.payload.accessToken);
+        setAuthToken(a.payload.accessToken);
       })
       .addCase(refreshAccessToken.rejected, (s) => {
         s.accessToken = null;
         s.user = null;
-        authAPI.clearToken();
+        clearToken();
+        setAuthToken(null);
       })
       .addCase(resetPassword.pending, pending)
       .addCase(resetPassword.rejected, rejected)

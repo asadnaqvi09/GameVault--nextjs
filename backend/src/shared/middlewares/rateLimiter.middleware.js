@@ -29,5 +29,8 @@ export const reviewLimiter = rateLimit({
       ipAddress: req.ip,
       details: `Too many attempts on endpoint: ${req.originalUrl}`
     });
+    res.status(429).json({
+      message: 'Too many attempts. Please try again after 15 minutes.'
+    });
   }
-})
+});

@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${satoshi.variable} ${workSans.variable} h-full antialiased`}
+      className={`${satoshi.variable} ${workSans.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen flex flex-col">
           <StoreProvider>
           <SmoothScroll />
           <Navbar />

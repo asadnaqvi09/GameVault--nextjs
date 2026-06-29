@@ -7,12 +7,19 @@ import {
   clearErrors, clearMessage,
 } from '../store/slices/authSlice';
 import { setToken, clearToken } from '../store/api/authApi';
+import { setAuthToken } from '../lib/api/authRequest';
 
 export function useAuth() {
   const dispatch = useDispatch();
   const { user,accessToken, isLoading, errors, message } = useSelector((s) => s.auth);
   useEffect(() => {
-    accessToken ? setToken(accessToken) : clearToken();
+    if (accessToken) {
+      setToken(accessToken);
+      setAuthToken(accessToken);
+    } else {
+      clearToken();
+      setAuthToken(null);
+    }
   }, [accessToken]);
   useEffect(() => {
     const wasExplicitLogout = sessionStorage.getItem('explicit_logout');

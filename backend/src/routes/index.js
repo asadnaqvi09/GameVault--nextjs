@@ -7,7 +7,6 @@ import wishlistRoutes from '../modules/wishlist/routes/wishlist.routes.js';
 import cartRoutes from '../modules/cart/routes/cart.routes.js';
 import orderRoutes from '../modules/orders/routes/order.routes.js';
 import paymentRoutes from '../modules/payments/routes/payment.routes.js';
-import homeRoutes from '../modules/home/routes/home.routes.js';
 import adminRoutes from '../modules/admin/routes/admin.routes.js';
 import contactRoutes from '../modules/contact/routes/contact.routes.js';
 
@@ -25,7 +24,6 @@ router.use('/wishlist', wishlistRoutes);
 router.use('/cart', cartRoutes);
 router.use('/orders', orderRoutes);
 router.use('/payments', paymentRoutes);
-router.use('/home', homeRoutes);
 router.use('/admin', adminRoutes);
 router.use('/contact', contactRoutes);
 

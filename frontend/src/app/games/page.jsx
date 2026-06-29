@@ -1,10 +1,12 @@
+import React, { Suspense } from 'react'
 import CatalogLayout from '@/components/sections/games_page/CatalogueLayout'
-import React from 'react'
 
 export default function GamePage() {
-    return (
-        <main>
-            <CatalogLayout isSalesMode={false} heading="All Games" />
-        </main>
-    )
+  return (
+    <main>
+      <Suspense fallback={<div className="text-center py-20 text-gray-500 font-medium text-lg">Loading games...</div>}>
+        <CatalogLayout isSalesMode={false} heading="All Games" />
+      </Suspense>
+    </main>
+  )
 }

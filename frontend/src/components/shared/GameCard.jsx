@@ -131,7 +131,7 @@ export default function GameCard({ id, image, title, tags = [], rating, price, o
               >
                 <Link
                   id="game-card-options-link"
-                  href={`/product/${id}`}
+                  href={`/games/${id}`}
                   onClick={handleCtaClick}
                   className="relative inline-block text-base font-bold text-[#5B42F3] pb-0.5"
                 >
