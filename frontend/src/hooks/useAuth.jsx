@@ -31,6 +31,7 @@ export function useAuth() {
   return {
     isAuthenticated: !!accessToken,
     user,
+    accessToken,
     role: user?.role || null,
     isLoading,
     errors,

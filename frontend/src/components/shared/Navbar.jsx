@@ -15,10 +15,12 @@ import MobileHeader from "@/components/sections/navbar/navbar_mobile_header";
 import MobileDrawer from "@/components/sections/navbar/navbar_mobile_drawer";
 import CartDrawer from "@/components/sections/navbar/navbar_cart_drawer";
 import SearchOverlay from "@/components/sections/navbar/navbar_search_overlay";
+import { useCart } from "@/hooks/useCart";
 
 export default function Navbar() {
     const router = useRouter();
     const { user, isAuthenticated, logout } = useAuth();
+    const { cartItems, cartCount, cartTotal, removeFromCart, updateQuantity } = useCart();
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isGamesOpen, setIsGamesOpen] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -36,7 +38,7 @@ export default function Navbar() {
         { name: "Games", link: "/games" },
         { name: "Sale", link: "/on-sale" },
         { name: "About Us", link: "/about-us" },
-        { name: "Contact Us", link: "/contact" },
+        { name: "Contact Us", link: "/contact-us" },
         { name: "Wishlist", link: "/wishlist" },
         ...(!isAuthenticated ? [{ name: "Login/Register", link: "/auth" }] : []),
     ];
@@ -71,7 +73,7 @@ export default function Navbar() {
                                 onLogout={handleLogout}
                             />
                             <WishlistButton count={0} />
-                            <CartButton count={0} total="0.00" onOpen={() => setIsCartOpen(true)} />
+                            <CartButton count={cartCount} total={cartTotal.toLocaleString()} onOpen={() => setIsCartOpen(true)} />
                         </div>
                     </div>
                     <AnimatePresence>
@@ -97,6 +99,9 @@ export default function Navbar() {
             <CartDrawer
                 isOpen={isCartOpen}
                 onClose={() => setIsCartOpen(false)}
+                cartItems={cartItems}
+                onRemoveItem={removeFromCart}
+                onUpdateQuantity={updateQuantity}
             />
             <SearchOverlay
                 isOpen={isSearchOpen}

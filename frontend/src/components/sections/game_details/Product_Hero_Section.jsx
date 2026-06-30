@@ -1,15 +1,36 @@
 "use client";
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faStarHalfAlt, faMinus, faPlus, faPlay, faGamepad, faGlobe, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faXTwitter, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
 import ProductTopNav from './Product_Top_Nav'
+import { useCart } from '@/hooks/useCart'
 
 export default function ProductHeroSection({ game, prevGameId, nextGameId }) {
+    const router = useRouter()
+    const { addToCart } = useCart()
     const [selectedPlatform, setSelectedPlatform] = useState('')
     const [selectedEdition, setSelectedEdition] = useState('')
     const [quantity, setQuantity] = useState(1)
+    const buildCartItem = () => ({
+        gameId: game.id,
+        id: game.id,
+        title: game.title,
+        price: game.price,
+        image: game.detailedDescription?.topGalleryImages?.[0] || game.coverImage,
+        quantity,
+        platform: selectedPlatform || null,
+        edition: selectedEdition || null,
+    })
+    const handleAddToCart = async () => {
+        await addToCart(buildCartItem())
+    }
+    const handleBuyNow = async () => {
+        const ok = await addToCart(buildCartItem())
+        if (ok) router.push('/checkout')
+    }
     const renderStars = (rating) => {
         const stars = []
         const floorRating = Math.floor(rating)
@@ -123,18 +144,18 @@ export default function ProductHeroSection({ game, prevGameId, nextGameId }) {
                             </div>
                             <div className="flex items-center gap-1.5 pt-1">
                                 <div className="flex items-center justify-between border border-gray-200 rounded-full h-10 px-1 w-20 shrink-0 bg-gray-50/50">
-                                    <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-900">
+                                    <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-900 cursor-pointer">
                                         <FontAwesomeIcon icon={faMinus} className="text-[9px]" />
                                     </button>
                                     <span className="text-xs font-bold text-gray-900">{quantity}</span>
-                                    <button onClick={() => setQuantity(q => q + 1)} className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-900">
+                                    <button onClick={() => setQuantity(q => q + 1)} className="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-900 cursor-pointer">
                                         <FontAwesomeIcon icon={faPlus} className="text-[9px]" />
                                     </button>
                                 </div>
-                                <button className="flex-1 h-10 bg-[#6C47FF] text-white text-xs font-bold rounded-full hover:bg-[#5b3ae6] transition-all">
+                                <button type="button" onClick={handleAddToCart} className="flex-1 h-10 bg-[#6C47FF] text-white text-xs font-bold rounded-full hover:bg-[#5b3ae6] transition-all cursor-pointer">
                                     Add To Cart
                                 </button>
-                                <button className="flex-1 h-10 bg-[#F4F0FF] text-[#6C47FF] text-xs font-bold rounded-full hover:bg-[#e9e2ff] transition-all">
+                                <button type="button" onClick={handleBuyNow} className="flex-1 h-10 bg-[#F4F0FF] text-[#6C47FF] text-xs font-bold rounded-full hover:bg-[#e9e2ff] transition-all cursor-pointer">
                                     Buy Now
                                 </button>
                             </div>

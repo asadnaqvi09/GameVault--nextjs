@@ -21,16 +21,16 @@ export function WishlistButton() {
     );
 }
 
-export function CartButton({ count = 0, total = "0.00", onOpen }) {
+export function CartButton({ count = 0, total = "0", onOpen }) {
     return (
         <button
             onClick={onOpen}
-            className="flex items-center gap-2 text-[#222] hover:text-[#6C47FF] transition-colors duration-200 focus:outline-none"
+            className="flex items-center gap-2 text-[#222] hover:text-[#6C47FF] transition-colors duration-200 focus:outline-none cursor-pointer"
             aria-label="Cart"
         >
             <ShoppingCart className="text-[20px]" />
             <p className="hidden xl:block text-[14px] font-semibold text-gray-700">
-                {count} / <span className="text-[#222]">${total}</span>
+                {count} / <span className="text-[#222]">PKR {total}</span>
             </p>
         </button>
     );

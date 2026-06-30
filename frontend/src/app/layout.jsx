@@ -3,6 +3,7 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import StoreProvider from '@/store/provider/storeProvider';
+import { ToastProvider } from '@/context/ToastContext';
 import "./global.css";
 
 export const metadata = {
@@ -18,10 +19,12 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-screen flex flex-col">
           <StoreProvider>
+          <ToastProvider>
           <SmoothScroll />
           <Navbar />
           {children}
           <Footer />
+          </ToastProvider>
         </StoreProvider>
       </body>
     </html>

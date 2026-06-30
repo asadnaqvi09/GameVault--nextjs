@@ -1,35 +1,30 @@
 "use client";
-
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { User, LogOut, Users, ArrowDownToLine } from 'lucide-react';
+import { User, LogOut, Users, ChevronDown } from 'lucide-react';
 
 export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggleDrawer, onCloseDrawer, onLogout }) {
     if (!isAuthenticated) {
         return (
             <Link
                 href="/auth"
-                className="text-[#222] hover:text-[#6C47FF] transition-colors duration-200 flex items-center"
+                className="text-[#222] hover:text-[#6C47FF] transition-colors duration-200 flex items-center cursor-pointer"
                 aria-label="Account"
             >
                 <User className="text-[20px]" />
             </Link>
         );
     }
-
     return (
         <div className="relative">
             <button
                 onClick={onToggleDrawer}
-                className="text-[#222] hover:text-[#6C47FF] transition-colors duration-200 flex items-center gap-2 text-[14px] font-medium focus:outline-none py-2"
+                className="text-[#222] hover:text-[#6C47FF] transition-colors duration-200 flex items-center gap-2 text-[14px] font-medium focus:outline-none py-2 cursor-pointer"
             >
                 <User className="text-[20px]" />
                 <span className="hidden xl:inline max-w-[120px] truncate">{user?.userName || "Account"}</span>
-                <ArrowDownToLine
-                    className={`text-[10px] text-gray-400 transition-transform duration-200 ${isDrawerOpen ? "rotate-180" : ""}`}
-                />
+                <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? "rotate-180" : ""}`} />
             </button>
-
             <AnimatePresence>
                 {isDrawerOpen && (
                     <>
@@ -45,8 +40,7 @@ export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggle
                                 <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Signed in as</p>
                                 <p className="text-sm font-bold text-gray-800 truncate">{user?.userName}</p>
                             </div>
-
-                            {user?.role === "admin" ? (
+                            {user?.role === "Admin" ? (
                                 <Link
                                     href="/admin"
                                     onClick={onCloseDrawer}
@@ -56,23 +50,19 @@ export default function UserMenu({ user, isAuthenticated, isDrawerOpen, onToggle
                                     Admin Panel
                                 </Link>
                             ) : (
-                                <button
+                                <Link
+                                    href="/profile"
                                     onClick={onCloseDrawer}
-                                    className="flex items-center gap-3 px-4 py-3 text-[14px] font-medium text-gray-600 hover:bg-gray-50 transition-colors w-full text-left cursor-default"
+                                    className="flex items-center gap-3 px-4 py-3 text-[14px] font-medium text-gray-600 hover:bg-gray-50 transition-colors w-full text-left"
                                 >
                                     <User className="text-base text-gray-400" />
                                     My Profile
-                                    <span className="text-[10px] bg-purple-100 text-[#6C47FF] px-1.5 py-0.2 rounded font-semibold ml-auto">
-                                        Soon
-                                    </span>
-                                </button>
+                                </Link>
                             )}
-
                             <hr className="border-gray-100 my-1" />
-
                             <button
                                 onClick={onLogout}
-                                className="flex items-center gap-3 px-4 py-3 text-[14px] font-medium text-red-600 hover:bg-red-50 transition-colors w-full text-left focus:outline-none"
+                                className="flex items-center gap-3 px-4 py-3 text-[14px] font-medium text-red-600 hover:bg-red-50 transition-colors w-full text-left focus:outline-none cursor-pointer"
                             >
                                 <LogOut className="text-base text-red-400" />
                                 Log Out

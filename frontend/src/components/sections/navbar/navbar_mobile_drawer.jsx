@@ -69,7 +69,7 @@ export default function MobileDrawer({ isOpen, onClose, mobileTab, onTabChange, 
                                     ))}
                                     {isAuthenticated && (
                                         <>
-                                            {user?.role === "admin" ? (
+                                            {user?.role === "Admin" ? (
                                                 <Link
                                                     href="/admin"
                                                     onClick={onClose}
@@ -78,9 +78,13 @@ export default function MobileDrawer({ isOpen, onClose, mobileTab, onTabChange, 
                                                     Admin Panel
                                                 </Link>
                                             ) : (
-                                                <span className="text-left text-[15px] font-semibold text-gray-400 cursor-not-allowed">
-                                                    My Profile (Soon)
-                                                </span>
+                                                <Link
+                                                    href="/profile"
+                                                    onClick={onClose}
+                                                    className="text-left text-[15px] font-semibold text-[#222] hover:text-[#6C47FF]"
+                                                >
+                                                    My Profile
+                                                </Link>
                                             )}
                                             <button
                                                 onClick={onLogout}

@@ -1,10 +1,8 @@
 "use client";
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { ChevronDown } from "lucide-react";
 
 const navLinks = [
     { id: 1, name: "Home", link: "/" },
@@ -14,7 +12,6 @@ const navLinks = [
 
 export default function NavLinks({ isGamesOpen, onGamesEnter, onGamesLeave }) {
     const pathname = usePathname();
-
     return (
         <nav className="flex items-center gap-6 xl:gap-8 h-full">
             {navLinks.map((item) => {
@@ -28,15 +25,12 @@ export default function NavLinks({ isGamesOpen, onGamesEnter, onGamesLeave }) {
                     >
                         <Link
                             href={item.link}
-                            className={`flex items-center gap-2 text-[15px] font-semibold transition-colors duration-200 cursor-pointer ${isActive ? "text-[#6C47FF]" : "text-[#222] hover:text-[#6C47FF]"
-                                }`}
+                            className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors duration-200 cursor-pointer ${isActive ? "text-[#6C47FF]" : "text-[#222] hover:text-[#6C47FF]"}`}
                         >
                             {item.name}
                             {item.name === "Games" && (
-                                <FontAwesomeIcon
-                                    icon={faChevronDown}
-                                    className={`text-[10px] transition-transform duration-200 ${isGamesOpen ? "rotate-180 text-[#6C47FF]" : "text-gray-400"
-                                        }`}
+                                <ChevronDown
+                                    className={`w-3.5 h-3.5 transition-transform duration-200 ${isGamesOpen ? "rotate-180 text-[#6C47FF]" : "text-gray-400"}`}
                                 />
                             )}
                         </Link>

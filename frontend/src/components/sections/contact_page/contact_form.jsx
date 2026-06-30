@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import ContactImage from '@/../public/images/contact_Image.png'
+import { submitContact } from '@/store/api/contactApi'
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -22,34 +23,19 @@ export default function ContactForm() {
         e.preventDefault()
         setStatus('sending')
         try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            })
-            if (response.ok) {
-                setStatus('success')
-                setFormData({ firstName: '', lastName: '', email: '', message: '' })
-            } else {
-                setStatus('error')
-            }
-        } catch (error) {
+            await submitContact(formData)
+            setStatus('success')
+            setFormData({ firstName: '', lastName: '', email: '', message: '' })
+        } catch {
+            console.log('Error in Contact Form : ', err.message);
             setStatus('error')
         }
-    }
+    };
 
     return (
         <section className="w-full bg-white">
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <div className="flex flex-col gap-8">
-                    <div className="flex flex-col gap-3">
-                        <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 tracking-tight">
-                            Contact Us
-                        </h1>
-                        <p className="text-neutral-500 text-sm md:text-base leading-relaxed">
-                            The online store of equipment and electronics is one of the leading online stores.
-                        </p>
-                    </div>
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <input
