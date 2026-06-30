@@ -21,6 +21,14 @@ export const listQueryValidator = (data) =>
       .default('default')
   }).validate(data, { abortEarly: false });
 
+export const adminListQueryValidator = (data) =>
+  Joi.object({
+    page: Joi.number().integer().min(1).default(1),
+    limit: Joi.number().integer().min(1).max(50).default(20),
+    isApproved: Joi.string().valid('true', 'false').optional(),
+    search: Joi.string().trim().max(100).allow('').optional(),
+  }).validate(data, { abortEarly: false });
+
 export const moderationValidator = (data) =>
   Joi.object({
     isApproved: Joi.boolean().required()

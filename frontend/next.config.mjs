@@ -34,6 +34,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'blz-contentstack-images.akamaized.net',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
     ],
   },
   reactCompiler: true,

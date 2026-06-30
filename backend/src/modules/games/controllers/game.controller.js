@@ -3,7 +3,8 @@ import {
   createGameValidator,
   updateGameValidator,
   patchGameValidator,
-  listQueryValidator
+  listQueryValidator,
+  adminListQueryValidator
 } from '../validators/game.validator.js';
 import {
   PUBLIC_FILTER,
@@ -11,6 +12,7 @@ import {
   buildListFilter,
   buildSortOptions,
   paginateGames,
+  paginateAdminGames,
   toCardShape,
   toDetailShape,
   getSlugNeighbors,
@@ -42,17 +44,13 @@ export const getGames = async (req, res) => {
         message: error.details.map((err) => err.message).join(', ')
       });
     }
-
     const { page, limit, sort } = value;
     const { filter, hasTextSearch } = await buildListFilter(value);
-
     if (!filter) {
       return sendEmptyListResponse(res, page, limit, 'Games Fetched Successfully');
     }
-
     const sortOptions = buildSortOptions(sort, hasTextSearch);
     const result = await paginateGames(filter, sortOptions, page, limit);
-
     return sendListResponse(res, result, 'Games Fetched Successfully');
   } catch (error) {
     console.log('Error in Get Games Controller : ', error.message);
@@ -73,23 +71,53 @@ export const getOnSaleGames = async (req, res) => {
         message: error.details.map((err) => err.message).join(', ')
       });
     }
-
     const { page, limit, sort } = value;
     const { filter, hasTextSearch } = await buildListFilter(value, { salesOnly: true });
-
     if (!filter) {
       return sendEmptyListResponse(res, page, limit, 'On-sale games fetched successfully');
     }
-
     const sortOptions = buildSortOptions(sort, hasTextSearch);
     const result = await paginateGames(filter, sortOptions, page, limit);
-
     return sendListResponse(res, result, 'On-sale games fetched successfully');
   } catch (error) {
     console.log('Error in Get On Sale Games Controller : ', error.message);
     return res.status(500).json({
       success: false,
       message: 'Error in Get On Sale Games Controller',
+      error: error.message
+    });
+  }
+};
+
+export const getAdminGames = async (req, res) => {
+  try {
+    const { error, value } = adminListQueryValidator(req.query);
+    if (error) {
+      return res.status(400).json({
+        success: false,
+        message: error.details.map((err) => err.message).join(', ')
+      });
+    }
+    const result = await paginateAdminGames(value);
+    return res.status(200).json({
+      success: true,
+      message: 'Admin games fetched successfully',
+      data: result.games.map((game) => ({
+        ...toCardShape(game),
+        isActive: game.isActive,
+      })),
+      meta: {
+        page: result.page,
+        limit: result.limit,
+        total: result.total,
+        totalPages: result.totalPages,
+      },
+    });
+  } catch (error) {
+    console.log('Error in Get Admin Games Controller : ', error.message);
+    return res.status(500).json({
+      success: false,
+      message: 'Error in Get Admin Games Controller',
       error: error.message
     });
   }
@@ -420,6 +448,33 @@ export const deleteGame = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: 'Error in Delete Game Controller',
+      error: error.message
+    });
+  }
+};
+
+export const getAdminGameBySlug = async (req, res) => {
+  try {
+    const slug = req.params.slug.toLowerCase();
+    const game = await Game.findOne({ id: slug, isDeleted: false })
+      .populate('genre', 'name')
+      .lean();
+    if (!game) {
+      return res.status(404).json({
+        success: false,
+        message: 'Game Not Found'
+      });
+    }
+    return res.status(200).json({
+      success: true,
+      message: 'Game fetched successfully',
+      data: { ...toDetailShape(game), isActive: game.isActive }
+    });
+  } catch (error) {
+    console.log('Error in Get Admin Game Controller : ', error.message);
+    return res.status(500).json({
+      success: false,
+      message: 'Error in Get Admin Game Controller',
       error: error.message
     });
   }

@@ -1,4 +1,5 @@
 import genre from '../models/genre.model.js';
+import Game from '../../games/models/game.model.js';
 import { genreValidator } from '../validators/genre.validator.js';
 
 export const getAllGenre = async (req, res) => {
@@ -100,17 +101,25 @@ export const updateGenre = async (req, res) => {
 export const deleteGenre = async (req, res) => {
     try {
         const { id } = req.params;
-        const deletedGenre = await genre.findByIdAndDelete(id);
-        if (!deletedGenre) {
+        const genreDoc = await genre.findById(id);
+        if (!genreDoc) {
             return res.status(404).json({
                 success: false,
                 message: "Genre Not Found"
             });
         }
+        const gamesUsingGenre = await Game.countDocuments({ genre: id, isDeleted: false });
+        if (gamesUsingGenre > 0) {
+            return res.status(409).json({
+                success: false,
+                message: `Cannot delete genre used by ${gamesUsingGenre} game(s)`
+            });
+        }
+        await genre.findByIdAndDelete(id);
         return res.status(200).json({
             success: true,
             message: "Genre Deleted Successfully",
-            data: deletedGenre
+            data: { id: genreDoc._id, name: genreDoc.name }
         });
     } catch (error) {
         return res.status(500).json({

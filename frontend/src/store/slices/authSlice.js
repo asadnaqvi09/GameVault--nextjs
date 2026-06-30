@@ -3,10 +3,21 @@ import * as authAPI from '../api/authApi';
 import { setToken, clearToken } from '../api/authApi';
 import { setAuthToken } from '../../lib/api/authRequest';
 
+const syncSession = async (accessToken) => {
+  setToken(accessToken);
+  setAuthToken(accessToken);
+  const me = await authAPI.getMeAPI();
+  return { accessToken, user: me.user };
+};
+
 export const register = createAsyncThunk(
   'auth/register',
   async (body, { rejectWithValue }) => {
-    try { return await authAPI.registerAPI(body); }
+    try {
+      const data = await authAPI.registerAPI(body);
+      const session = await syncSession(data.accessToken);
+      return { ...session, message: data.message };
+    }
     catch (e) { return rejectWithValue(e.response ?? e.message); }
   }
 );
@@ -14,7 +25,10 @@ export const register = createAsyncThunk(
 export const login = createAsyncThunk(
   'auth/login',
   async (body, { rejectWithValue }) => {
-    try { return await authAPI.loginAPI(body); }
+    try {
+      const data = await authAPI.loginAPI(body);
+      return await syncSession(data.accessToken);
+    }
     catch (e) { return rejectWithValue(e.response ?? e.message); }
   }
 );
@@ -22,7 +36,10 @@ export const login = createAsyncThunk(
 export const refreshAccessToken = createAsyncThunk(
   'auth/refresh',
   async (_, { rejectWithValue }) => {
-    try { return await authAPI.refreshTokenAPI(); }
+    try {
+      const data = await authAPI.refreshTokenAPI();
+      return await syncSession(data.accessToken);
+    }
     catch (e) { return rejectWithValue(e.response ?? e.message); }
   }
 );
@@ -50,13 +67,22 @@ const initialState = {
   errors:      null,
   message:     null,
 };
+
+const applySession = (state, payload) => {
+  state.accessToken = payload.accessToken;
+  state.user = payload.user;
+};
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
     clearErrors: (s) => { s.errors = null; },
     clearMessage: (s) => { s.message = null; },
-    setAuthData: (s, a) => { s.accessToken = a.payload; s.user = a.payload.user},
+    setAuthData: (s, a) => {
+      s.accessToken = a.payload.accessToken;
+      s.user = a.payload.user;
+    },
   },
   extraReducers: (builder) => {
     const pending = (s) => { s.isLoading = true; s.errors = null; };
@@ -66,24 +92,24 @@ const authSlice = createSlice({
       .addCase(register.rejected, rejected)
       .addCase(register.fulfilled, (s, a) => {
         s.isLoading = false;
-        s.accessToken = a.payload.accessToken;
+        applySession(s, a.payload);
         s.message = a.payload.message;
       })
       .addCase(login.pending, pending)
       .addCase(login.rejected, rejected)
       .addCase(login.fulfilled, (s, a) => {
         s.isLoading = false;
-        s.accessToken = a.payload.accessToken;
-        setToken(a.payload.accessToken);
-        setAuthToken(a.payload.accessToken);
+        applySession(s, a.payload);
+      })
+      .addCase(refreshAccessToken.pending, (s) => {
+        s.isLoading = true;
       })
       .addCase(refreshAccessToken.fulfilled, (s, a) => {
-        s.accessToken = a.payload.accessToken;
-        s.user = a.payload.user;
-        setToken(a.payload.accessToken);
-        setAuthToken(a.payload.accessToken);
+        s.isLoading = false;
+        applySession(s, a.payload);
       })
       .addCase(refreshAccessToken.rejected, (s) => {
+        s.isLoading = false;
         s.accessToken = null;
         s.user = null;
         clearToken();

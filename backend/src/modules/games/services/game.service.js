@@ -191,3 +191,32 @@ export const prepareGamePayload = async (value) => {
     }
   };
 };
+
+export const paginateAdminGames = async ({ page, limit, search, isActive }) => {
+  const filter = { isDeleted: false };
+  if (isActive === 'true') filter.isActive = true;
+  if (isActive === 'false') filter.isActive = false;
+  if (search?.trim()) {
+    filter.$or = [
+      { title: { $regex: search.trim(), $options: 'i' } },
+      { id: { $regex: search.trim(), $options: 'i' } },
+    ];
+  }
+  const skip = (page - 1) * limit;
+  const [games, total] = await Promise.all([
+    Game.find(filter)
+      .populate('genre', 'name')
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit)
+      .lean(),
+    Game.countDocuments(filter),
+  ]);
+  return {
+    games,
+    total,
+    page,
+    limit,
+    totalPages: Math.ceil(total / limit) || 0,
+  };
+};

@@ -73,3 +73,11 @@ export const listQueryValidator = (data) =>
     tags: Joi.string().trim(),
     search: Joi.string().trim().max(100)
   }).validate(data, { abortEarly: false });
+
+export const adminListQueryValidator = (data) =>
+  Joi.object({
+    page: Joi.number().integer().min(1).default(1),
+    limit: Joi.number().integer().min(1).max(100).default(20),
+    search: Joi.string().trim().max(100).allow('').optional(),
+    isActive: Joi.string().valid('true', 'false').optional(),
+  }).validate(data, { abortEarly: false });

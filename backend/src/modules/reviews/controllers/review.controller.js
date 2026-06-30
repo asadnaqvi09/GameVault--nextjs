@@ -3,12 +3,14 @@ import {
   createReviewValidator,
   updateReviewValidator,
   listQueryValidator,
-  moderationValidator
+  moderationValidator,
+  adminListQueryValidator,
 } from '../validators/review.validator.js';
 import {
   resolveGameBySlug,
   buildReviewSummary,
   paginateGameReviews,
+  paginateAdminReviews,
   recalculateGameRating,
   toPublicReviewShape,
   isValidReviewId
@@ -218,6 +220,32 @@ export const hardDeleteReview = async (req, res) => {
       success: false,
       message: 'Error in Hard Delete Review Controller',
       error: error.message
+    });
+  }
+};
+
+export const getAdminReviews = async (req, res) => {
+  try {
+    const { error, value } = adminListQueryValidator(req.query);
+    if (error) return joiError(res, error);
+    const result = await paginateAdminReviews(value);
+    return res.status(200).json({
+      success: true,
+      message: 'Reviews fetched successfully',
+      data: result.reviews,
+      meta: {
+        page: result.page,
+        limit: result.limit,
+        total: result.total,
+        totalPages: result.totalPages,
+      },
+    });
+  } catch (error) {
+    console.log('Error in Get Admin Reviews Controller : ', error.message);
+    return res.status(500).json({
+      success: false,
+      message: 'Error in Get Admin Reviews Controller',
+      error: error.message,
     });
   }
 };

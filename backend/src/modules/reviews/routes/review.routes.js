@@ -8,6 +8,7 @@ const router = Router();
 const admin = [protect, authorize('Admin')];
 
 // Static / nested paths FIRST
+router.get('/admin/list', admin, reviewController.getAdminReviews);
 router.get('/me', protect, reviewController.getMyReviews);
 router.get('/game/:slug/summary', reviewController.getGameReviewSummary);
 router.get('/game/:slug', reviewController.getGameReviews);

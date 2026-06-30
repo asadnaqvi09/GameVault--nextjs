@@ -127,3 +127,58 @@ export const paginateGameReviews = async (gameId, { page, limit, sort }) => {
 };
 
 export const isValidReviewId = (id) => mongoose.Types.ObjectId.isValid(id);
+
+export const toAdminReviewShape = (review) => ({
+  reviewId: review._id.toString(),
+  username: review.user?.userName ?? 'Anonymous',
+  userRating: review.rating,
+  comment: review.comment,
+  isApproved: review.isApproved,
+  date: formatReviewDate(review.createdAt),
+  game: {
+    slug: review.game?.id ?? null,
+    title: review.game?.title ?? null,
+  },
+});
+
+export const paginateAdminReviews = async ({ page, limit, isApproved, search }) => {
+  const filter = { isDeleted: false };
+  if (isApproved === 'true') filter.isApproved = true;
+  if (isApproved === 'false') filter.isApproved = false;
+  const skip = (page - 1) * limit;
+  let query = Review.find(filter)
+    .populate('user', 'userName')
+    .populate('game', 'id title')
+    .sort({ createdAt: -1 })
+    .skip(skip)
+    .limit(limit);
+  if (search?.trim()) {
+    const regex = new RegExp(search.trim(), 'i');
+    const games = await Game.find({
+      isDeleted: false,
+      title: regex,
+    }).select('_id').lean();
+    const gameIds = games.map((g) => g._id);
+    filter.$or = [
+      { comment: regex },
+      { game: { $in: gameIds } },
+    ];
+    query = Review.find(filter)
+      .populate('user', 'userName')
+      .populate('game', 'id title')
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit);
+  }
+  const [reviews, total] = await Promise.all([
+    query.lean(),
+    Review.countDocuments(filter),
+  ]);
+  return {
+    reviews: reviews.map(toAdminReviewShape),
+    total,
+    page,
+    limit,
+    totalPages: Math.ceil(total / limit) || 0,
+  };
+};

@@ -8,6 +8,8 @@ const admin = [protect, authorize('Admin')];
 
 // Public
 router.get('/', gameController.getGames);
+router.get('/admin/list', admin, gameController.getAdminGames);
+router.get('/admin/:slug', admin, gameController.getAdminGameBySlug);
 router.get('/on-sale', gameController.getOnSaleGames);
 router.get('/on-sale/count', gameController.getOnSaleCount);
 router.get('/top-sellers', gameController.getTopSellers);

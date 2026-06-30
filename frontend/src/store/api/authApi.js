@@ -1,4 +1,6 @@
-const BASE = `http://localhost:5000/api/v1/auth`;
+import { API_BASE } from '@/lib/api/config';
+
+const BASE = `${API_BASE}/auth`;
 
 let _token = null;
 export const setToken  = (t) => { _token = t; };
@@ -45,6 +47,7 @@ export async function authReq(path, opts = {}) {
 
 export const registerAPI     = (b) => req('/register',       { method: 'POST', body: b });
 export const loginAPI         = (b) => req('/login',          { method: 'POST', body: b });
-export const refreshTokenAPI  = ()  => req('/refresh-token',        { method: 'POST' });
+export const refreshTokenAPI  = ()  => req('/refresh-token',  { method: 'POST' });
 export const resetPasswordAPI = (b) => req('/reset-password', { method: 'POST', body: b });
 export const logoutAPI        = ()  => req('/logout',         { method: 'POST', auth: true });
+export const getMeAPI         = ()  => req('/me',             { auth: true });
