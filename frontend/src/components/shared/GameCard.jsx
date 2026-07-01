@@ -47,7 +47,7 @@ export default function GameCard({ id, image, title, tags = [], rating, price, o
         <motion.img
           src={image || heroBanner2.src}
           alt={title}
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contains"
           animate={{ scale: isHovered ? 1.04 : 1 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
         />

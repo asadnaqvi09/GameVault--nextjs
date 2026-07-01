@@ -64,7 +64,7 @@ export default function BlogCard({
                         <span className="meta-label">Posted by</span>
 
                         <Link
-                            href={`/author/${author.id}`}
+                            href=""
                             onClick={stopPropagation}
                             className="flex items-center gap-1.5"
                         >

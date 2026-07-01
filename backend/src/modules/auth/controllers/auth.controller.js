@@ -4,6 +4,7 @@ import AuditLog from '../../../shared/models/auditLog.model.js';
 import { generateRecoveryKey } from '../../../shared/utils/crypto.util.js';
 import { generateAccessToken, generateRefreshToken } from '../../../shared/utils/token.util.js';
 import { sendRecoveryEmail } from '../../../shared/utils/sendEmail.util.js';
+import { refreshTokenCookieOptions, clearRefreshTokenCookieOptions } from '../../../shared/utils/cookie.util.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
@@ -58,12 +59,7 @@ export const register = async (req, res) => {
       token: refreshToken,
       expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
     });
-    res.cookie('refreshToken', refreshToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'Strict',
-      maxAge: 7 * 24 * 60 * 60 * 1000
-    });
+    res.cookie('refreshToken', refreshToken, refreshTokenCookieOptions);
     await AuditLog.create({
       user: user._id,
       action: 'USER_REGISTRATION',
@@ -102,12 +98,7 @@ export const login = async (req, res) => {
       token: refreshToken,
       expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
     });
-    res.cookie('refreshToken', refreshToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'Strict',
-      maxAge: 7 * 24 * 60 * 60 * 1000
-    });
+    res.cookie('refreshToken', refreshToken, refreshTokenCookieOptions);
     await AuditLog.create({
       user: user._id,
       action: 'USER_LOGIN',
@@ -125,7 +116,7 @@ export const refreshToken = async (req, res) => {
   const cookies = req.cookies;
   if (!cookies?.refreshToken) return res.status(401).json({ message: 'No refresh token' });
   const oldRefreshToken = cookies.refreshToken;
-  res.clearCookie('refreshToken', { httpOnly: true, sameSite: 'Strict', secure: process.env.NODE_ENV === 'production' });
+  res.clearCookie('refreshToken', clearRefreshTokenCookieOptions);
   try {
     const foundToken = await Token.findOne({ token: oldRefreshToken });
     if (!foundToken || foundToken.isRevoked || foundToken.expiresAt < new Date()) {
@@ -152,12 +143,7 @@ export const refreshToken = async (req, res) => {
       token: newRefreshToken,
       expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
     });
-    res.cookie('refreshToken', newRefreshToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'Strict',
-      maxAge: 7 * 24 * 60 * 60 * 1000
-    });
+    res.cookie('refreshToken', newRefreshToken, refreshTokenCookieOptions);
     res.json({ accessToken });
   } catch (error) {
     console.log("Error in RefreshToken : ", error.message);
@@ -204,7 +190,7 @@ export const logout = async (req, res) => {
   const refreshToken = cookies.refreshToken;
   try {
     await Token.deleteOne({ token: refreshToken });
-    res.clearCookie('refreshToken', { httpOnly: true, sameSite: 'Strict', secure: process.env.NODE_ENV === 'production' });
+    res.clearCookie('refreshToken', clearRefreshTokenCookieOptions);
     res.json({ message: 'Logged out successfully' });
   } catch (error) {
     console.log("Error in Logout Controller : ", error.message);

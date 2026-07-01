@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import GameCard from '@/components/shared/GameCard';
 import { getTopSellers } from '@/store/api/gameApi';
 
@@ -37,17 +38,19 @@ export default function Top_Sellers({ variant = 'expanded' }) {
         <h1 className='text-2xl font-bold'>
           Top Sellers
         </h1>
-        <button className='shop-all py-2 px-6 text-center text-sm font-medium bg-gray-100 hover:bg-gray-300 duration-300 transistion-all rounded-4xl cursor-pointer flex items-center gap-2 group'>
-          Shop All
-          <svg
-            className="w-4 h-4 group-hover:translate-x-1.5 duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
+        <Link href="/games">
+          <button className='shop-all py-2 px-6 text-center text-sm font-medium bg-gray-100 hover:bg-gray-300 duration-300 transistion-all rounded-4xl cursor-pointer flex items-center gap-2 group'>
+            Shop All
+            <svg
+              className="w-4 h-4 group-hover:translate-x-1.5 duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </Link>
       </div>
       {isLoading ? (
         <div className="text-center py-12 text-gray-500 font-medium">Loading top sellers...</div>
