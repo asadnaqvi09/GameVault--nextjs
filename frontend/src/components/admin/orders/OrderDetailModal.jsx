@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Modal from '@/components/admin/ui/Modal';
 import ConfirmDialog from '@/components/admin/ui/ConfirmDialog';
 import StatusBadge from '@/components/admin/ui/StatusBadge';
@@ -98,6 +97,8 @@ export default function OrderDetailModal({
 
   const payment = order.paymentDetail || order.payment;
   const proofUrl = payment?.proofImageUrl;
+  const isManualMethod = order.paymentMethod === 'jazzcash' || order.paymentMethod === 'easypaisa';
+  const showPaymentSection = isManualMethod || !!payment;
 
   return (
     <>
@@ -157,41 +158,58 @@ export default function OrderDetailModal({
               </div>
             </section>
 
-            {payment && (
+            {showPaymentSection && (
               <section>
                 <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Payment</h3>
                 <div className="bg-gray-50 rounded-xl p-4 text-sm space-y-2">
-                  {payment.transactionId && (
+                  {!payment && (
+                    <p className="text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 text-xs">
+                      Payment record is missing. This order may have been created before upload completed.
+                    </p>
+                  )}
+                  {payment?.transactionId && (
                     <p>
                       <span className="text-gray-500">Transaction ID:</span>{' '}
                       <span className="font-mono font-semibold">{payment.transactionId}</span>
                     </p>
                   )}
-                  {payment.senderNumber && (
+                  {payment?.senderNumber && (
                     <p>
                       <span className="text-gray-500">Sender:</span> {payment.senderNumber}
                     </p>
                   )}
-                  {proofUrl && (
+                  {proofUrl ? (
                     <div className="pt-2">
-                      <p className="text-gray-500 mb-2">Payment proof</p>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <p className="text-gray-500">Payment proof</p>
+                        <a
+                          href={proofUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs font-semibold text-[#5B42F3] hover:underline cursor-pointer"
+                        >
+                          Open full image
+                        </a>
+                      </div>
                       <a
                         href={proofUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block cursor-pointer"
                       >
-                        <Image
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
                           src={proofUrl}
                           alt="Payment proof"
-                          width={280}
-                          height={180}
-                          className="rounded-lg border border-gray-200 object-cover max-h-48 w-auto"
-                          unoptimized
+                          className="rounded-lg border border-gray-200 object-cover max-h-52 w-auto max-w-full"
                         />
                       </a>
                     </div>
-                  )}
+                  ) : isManualMethod ? (
+                    <p className="text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 text-xs">
+                      No payment screenshot on file. Ask the customer to resubmit proof or cancel this order.
+                    </p>
+                  ) : null}
                 </div>
               </section>
             )}

@@ -2,13 +2,14 @@ import { Router } from 'express';
 import * as gameController from '../controllers/game.controller.js';
 import { protect } from '../../../shared/middlewares/auth.middleware.js';
 import { authorize } from '../../../shared/middlewares/role.middleware.js';
+import { uploadProof } from '../../payments/middlewares/uploadProof.middleware.js';
 
 const router = Router();
 const admin = [protect, authorize('Admin')];
 
-// Public
 router.get('/', gameController.getGames);
 router.get('/admin/list', admin, gameController.getAdminGames);
+router.post('/admin/upload-image', admin, uploadProof.single('image'), gameController.uploadGameImage);
 router.get('/admin/:slug', admin, gameController.getAdminGameBySlug);
 router.get('/on-sale', gameController.getOnSaleGames);
 router.get('/on-sale/count', gameController.getOnSaleCount);

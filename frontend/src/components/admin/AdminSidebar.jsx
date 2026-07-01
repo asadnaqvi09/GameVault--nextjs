@@ -7,7 +7,6 @@ import {
   ShoppingBag,
   Gamepad2,
   MessageSquare,
-  Tags,
   Mail,
   X,
 } from 'lucide-react';
@@ -17,7 +16,6 @@ const navItems = [
   { href: '/admin/orders', label: 'Orders', icon: ShoppingBag },
   { href: '/admin/games', label: 'Games', icon: Gamepad2 },
   { href: '/admin/reviews', label: 'Reviews', icon: MessageSquare },
-  { href: '/admin/genres', label: 'Genres', icon: Tags },
   { href: '/admin/contacts', label: 'Contacts', icon: Mail },
 ];
 

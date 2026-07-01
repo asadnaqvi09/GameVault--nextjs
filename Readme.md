@@ -9,7 +9,7 @@ Premium PC game storefront — Next.js frontend, Express API, and MongoDB.
 | Frontend | Next.js 16, React 19, Tailwind CSS 4, Redux Toolkit |
 | Backend | Node.js, Express 5, Mongoose |
 | Database | MongoDB Atlas |
-| Email | Resend |
+| Email | Nodemailer (SMTP) |
 | Media | Cloudinary (payment proof uploads) |
 | Fonts | Satoshi (headings), Work Sans (body) |
 
@@ -71,7 +71,11 @@ npm run seed:reviews
 | `CLIENT_URL` | Frontend URL — `http://localhost:3000` locally, Vercel URL in production |
 | `ACCESS_TOKEN_SECRET` | JWT access token secret |
 | `REFRESH_TOKEN_SECRET` | JWT refresh token secret |
-| `RESEND_API_KEY` | Resend API key for transactional email |
+| `SMTP_HOST` | SMTP server host (e.g. `smtp.gmail.com`) |
+| `SMTP_PORT` | SMTP port — usually `587` (TLS) or `465` (SSL) |
+| `SMTP_SECURE` | Set to `true` for port 465, otherwise `false` |
+| `SMTP_USER` | SMTP username / email |
+| `SMTP_PASS` | SMTP password or app password |
 | `MAIL_FROM` | Sender address, e.g. `GameVault <noreply@yourdomain.com>` |
 | `ADMIN_EMAIL` | Admin inbox for contact form notifications |
 | `CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name |

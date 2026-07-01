@@ -16,11 +16,13 @@ import MobileDrawer from "@/components/sections/navbar/navbar_mobile_drawer";
 import CartDrawer from "@/components/sections/navbar/navbar_cart_drawer";
 import SearchOverlay from "@/components/sections/navbar/navbar_search_overlay";
 import { useCart } from "@/hooks/useCart";
+import { useNavbarCatalog } from "@/hooks/useNavbarCatalog";
 
 export default function Navbar() {
     const router = useRouter();
     const { user, isAuthenticated, logout } = useAuth();
     const { cartItems, cartCount, cartTotal, removeFromCart, updateQuantity } = useCart();
+    const { platforms, genres, genresLoading } = useNavbarCatalog();
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isGamesOpen, setIsGamesOpen] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -79,6 +81,9 @@ export default function Navbar() {
                     <AnimatePresence>
                         {isGamesOpen && (
                             <GamesDropdown
+                                platforms={platforms}
+                                genres={genres}
+                                genresLoading={genresLoading}
                                 onMouseEnter={() => setIsGamesOpen(true)}
                                 onMouseLeave={() => setIsGamesOpen(false)}
                             />

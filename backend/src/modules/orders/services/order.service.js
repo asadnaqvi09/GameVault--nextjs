@@ -13,9 +13,8 @@ import {
   CURRENCY,
 } from '../../../shared/constants/order.constants.js';
 import {
-  sendOrderPlacedUserEmail,
-  sendOrderPlacedAdminEmail,
-  sendPaymentUnderReviewEmail,
+  dispatchOrderPlacedEmails,
+  safeSend,
   sendPaymentApprovedEmail,
   sendPaymentRejectedEmail,
   sendOrderFulfilledEmail,
@@ -123,10 +122,7 @@ export const placeCodOrder = async (userId, payload) => {
   order.payment = payment._id;
   await order.save();
   const populated = order.toObject();
-  await Promise.all([
-    sendOrderPlacedUserEmail(populated, payment),
-    sendOrderPlacedAdminEmail(populated, payment),
-  ]);
+  dispatchOrderPlacedEmails(populated, payment);
   return { order: toPublicOrder(populated, payment), payment };
 };
 
@@ -137,45 +133,59 @@ export const placeManualPaymentOrder = async (userId, payload, file) => {
   const { items, subtotal, total } = await resolveOrderItems(payload.items);
   const orderNumber = buildOrderNumber();
   const expiresAt = getExpiryDate();
-  const order = await Order.create({
-    orderNumber,
-    user: userId,
-    items,
-    billingDetails: payload.billingDetails,
-    subtotal,
-    total,
-    currency: CURRENCY,
-    status: ORDER_STATUS.PAYMENT_UNDER_REVIEW,
-    paymentMethod: payload.paymentMethod,
-    expiresAt,
-    fulfillment: { status: FULFILLMENT_STATUS.PENDING, keys: [] },
-  });
-  const proof = await uploadPaymentProof(file.buffer, orderNumber);
-  const payment = await createPayment({
-    order: order._id,
-    user: userId,
-    method: payload.paymentMethod,
-    amount: total,
-    currency: CURRENCY,
-    status: PAYMENT_STATUS.AWAITING_VERIFICATION,
-    expiresAt,
-    manualProof: {
-      imageUrl: proof.url,
-      imagePublicId: proof.publicId,
-      transactionId: payload.transactionId.trim(),
-      senderNumber: payload.senderNumber?.trim() || null,
-      uploadedAt: new Date(),
-    },
-  });
-  order.payment = payment._id;
-  await order.save();
-  const populated = order.toObject();
-  await Promise.all([
-    sendOrderPlacedUserEmail(populated, payment),
-    sendOrderPlacedAdminEmail(populated, payment),
-    sendPaymentUnderReviewEmail(populated, payment),
-  ]);
-  return { order: toPublicOrder(populated, payment), payment };
+
+  let order = null;
+  let proofPublicId = null;
+
+  try {
+    order = await Order.create({
+      orderNumber,
+      user: userId,
+      items,
+      billingDetails: payload.billingDetails,
+      subtotal,
+      total,
+      currency: CURRENCY,
+      status: ORDER_STATUS.PAYMENT_UNDER_REVIEW,
+      paymentMethod: payload.paymentMethod,
+      expiresAt,
+      fulfillment: { status: FULFILLMENT_STATUS.PENDING, keys: [] },
+    });
+
+    const proof = await uploadPaymentProof(file.buffer, orderNumber);
+    proofPublicId = proof.publicId;
+
+    const payment = await createPayment({
+      order: order._id,
+      user: userId,
+      method: payload.paymentMethod,
+      amount: total,
+      currency: CURRENCY,
+      status: PAYMENT_STATUS.AWAITING_VERIFICATION,
+      expiresAt,
+      manualProof: {
+        imageUrl: proof.url,
+        imagePublicId: proof.publicId,
+        transactionId: payload.transactionId.trim(),
+        senderNumber: payload.senderNumber?.trim() || null,
+        uploadedAt: new Date(),
+      },
+    });
+
+    order.payment = payment._id;
+    await order.save();
+    const populated = order.toObject();
+    dispatchOrderPlacedEmails(populated, payment);
+    return { order: toPublicOrder(populated, payment), payment };
+  } catch (err) {
+    if (order?._id) {
+      await Order.findByIdAndDelete(order._id).catch(() => {});
+    }
+    if (proofPublicId) {
+      await removePaymentProof(proofPublicId).catch(() => {});
+    }
+    throw err;
+  }
 };
 
 export const getOrdersForUser = async (userId, { page, limit }) => {
@@ -274,7 +284,7 @@ export const approveOrderPayment = async (adminId, orderId, ipAddress) => {
     { new: true }
   );
   if (!payment) throw new Error('Payment record not found');
-  await sendPaymentApprovedEmail(order.toObject(), payment);
+  safeSend(sendPaymentApprovedEmail(order.toObject(), payment), 'payment-approved');
   return { order: toAdminOrder(order.toObject(), payment), audit: { adminId, orderId, ipAddress } };
 };
 
@@ -296,7 +306,7 @@ export const rejectOrderPayment = async (adminId, orderId, reason, ipAddress) =>
     { new: true }
   );
   if (!payment) throw new Error('Payment record not found');
-  await sendPaymentRejectedEmail(order.toObject(), payment, reason);
+  safeSend(sendPaymentRejectedEmail(order.toObject(), payment, reason), 'payment-rejected');
   return { order: toAdminOrder(order.toObject(), payment), audit: { adminId, orderId, ipAddress } };
 };
 
@@ -316,7 +326,7 @@ export const confirmCodPayment = async (adminId, orderId, ipAddress) => {
     },
     { new: true }
   );
-  await sendPaymentApprovedEmail(order.toObject(), payment);
+  safeSend(sendPaymentApprovedEmail(order.toObject(), payment), 'cod-confirmed');
   return { order: toAdminOrder(order.toObject(), payment), audit: { adminId, orderId, ipAddress } };
 };
 
@@ -344,7 +354,7 @@ export const fulfillOrder = async (adminId, orderId, keys, adminNotes, ipAddress
     },
     { new: true }
   ).lean();
-  await sendOrderFulfilledEmail(updated, fulfillmentKeys);
+  safeSend(sendOrderFulfilledEmail(updated, fulfillmentKeys), 'order-fulfilled');
   return { order: toAdminOrder(updated), audit: { adminId, orderId, ipAddress } };
 };
 
@@ -379,7 +389,7 @@ export const expireStaleOrders = async () => {
     if (payment?.manualProof?.imagePublicId) {
       await removePaymentProof(payment.manualProof.imagePublicId);
     }
-    await sendOrderExpiredEmail(order, payment);
+    safeSend(sendOrderExpiredEmail(order, payment), 'order-expired');
   }
   return staleOrders.length;
 };

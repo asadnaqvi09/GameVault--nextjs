@@ -102,7 +102,14 @@ export default function CheckoutPage() {
       }
       setTimeout(() => router.push("/profile"), 2000);
     } catch (err) {
-      showToast(err.message || "Failed to place order", "error");
+      const status = err.response?.status;
+      if (status === 409) {
+        showToast(err.message || "This transaction ID was already used", "error");
+      } else if (status === 503) {
+        showToast("Payment upload is temporarily unavailable. Please try again.", "error");
+      } else {
+        showToast(err.message || "Failed to place order", "error");
+      }
     } finally {
       setIsSubmitting(false);
     }

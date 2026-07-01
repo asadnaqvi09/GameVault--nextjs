@@ -18,6 +18,7 @@ import {
   getSlugNeighbors,
   prepareGamePayload
 } from '../services/game.service.js';
+import { uploadGameAsset } from '../../payments/services/cloudinary.service.js';
 
 const sendListResponse = (res, { games, total, page, limit, totalPages }, message) =>
   res.status(200).json({
@@ -476,6 +477,31 @@ export const getAdminGameBySlug = async (req, res) => {
       success: false,
       message: 'Error in Get Admin Game Controller',
       error: error.message
+    });
+  }
+};
+
+export const uploadGameImage = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ success: false, message: 'Image file is required' });
+    }
+    const slug = String(req.body.slug || 'draft').trim().toLowerCase();
+    const asset = await uploadGameAsset(req.file.buffer, slug);
+    return res.status(201).json({
+      success: true,
+      message: 'Image uploaded successfully',
+      data: asset,
+    });
+  } catch (error) {
+    console.log('Error in Upload Game Image Controller : ', error.message);
+    if (error.message === 'Cloudinary is not configured') {
+      return res.status(503).json({ success: false, message: 'Image upload service is unavailable' });
+    }
+    return res.status(500).json({
+      success: false,
+      message: 'Failed to upload image',
+      error: error.message,
     });
   }
 };

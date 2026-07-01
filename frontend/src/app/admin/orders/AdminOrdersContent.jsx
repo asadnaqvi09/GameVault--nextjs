@@ -117,6 +117,25 @@ export default function AdminOrdersContent() {
       ),
     },
     {
+      key: 'proof',
+      label: 'Proof',
+      render: (row) => {
+        const isManual = row.paymentMethod === 'jazzcash' || row.paymentMethod === 'easypaisa';
+        if (!isManual) return <span className="text-xs text-gray-300">—</span>;
+        const detail = row.paymentDetail || row.payment;
+        const hasProof = !!detail?.proofImageUrl;
+        return (
+          <span
+            className={`inline-flex text-xs font-semibold px-2 py-0.5 rounded-full ${
+              hasProof ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'
+            }`}
+          >
+            {hasProof ? 'Attached' : 'Missing'}
+          </span>
+        );
+      },
+    },
+    {
       key: 'status',
       label: 'Status',
       render: (row) => <StatusBadge status={row.status} />,

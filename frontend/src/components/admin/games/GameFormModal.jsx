@@ -1,18 +1,31 @@
 'use client';
-
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Modal from '@/components/admin/ui/Modal';
 import { ALLOWED_GENRES, emptyGameForm, formToPayload, gameToForm } from '@/lib/admin/gameForm';
-import { createGame, updateGame } from '@/lib/api/adminGameApi';
+import { createGame, updateGame, uploadGameImage } from '@/lib/api/adminGameApi';
+import { useAuth } from '@/hooks/useAuth';
 
 const inputClass =
   'w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-[#5B42F3]';
 const labelClass = 'text-xs font-bold text-gray-500 uppercase tracking-wide';
+const btnClass =
+  'shrink-0 px-3 py-2.5 text-xs font-semibold bg-[#5B42F3]/10 text-[#5B42F3] hover:bg-[#5B42F3]/15 rounded-xl cursor-pointer disabled:opacity-50';
+
+const parseGallery = (value) =>
+  String(value || '')
+    .split(/[\n,]/)
+    .map((s) => s.trim())
+    .filter(Boolean);
 
 export default function GameFormModal({ open, onClose, initialGame, onSuccess, showToast }) {
+  const { accessToken } = useAuth();
   const isEdit = Boolean(initialGame);
   const [form, setForm] = useState(emptyGameForm());
   const [submitting, setSubmitting] = useState(false);
+  const [coverUploading, setCoverUploading] = useState(false);
+  const [galleryUploading, setGalleryUploading] = useState(false);
+  const coverInputRef = useRef(null);
+  const galleryInputRef = useRef(null);
 
   useEffect(() => {
     if (open) {
@@ -21,6 +34,45 @@ export default function GameFormModal({ open, onClose, initialGame, onSuccess, s
   }, [open, initialGame]);
 
   const setField = (name, value) => setForm((prev) => ({ ...prev, [name]: value }));
+  const uploadSlug = (form.id || initialGame?.id || 'draft').trim().toLowerCase();
+
+  const runUpload = async (file, onUrl) => {
+    const res = await uploadGameImage(file, uploadSlug, accessToken);
+    onUrl(res.data.url);
+  };
+
+  const handleCoverUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setCoverUploading(true);
+    try {
+      await runUpload(file, (url) => setField('coverImage', url));
+      showToast('Cover uploaded');
+    } catch (err) {
+      showToast(err.message || 'Cover upload failed', 'error');
+    } finally {
+      setCoverUploading(false);
+      e.target.value = '';
+    }
+  };
+
+  const handleGalleryUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setGalleryUploading(true);
+    try {
+      await runUpload(file, (url) => {
+        const lines = parseGallery(form.galleryImages);
+        setField('galleryImages', [...lines, url].join('\n'));
+      });
+      showToast('Gallery image uploaded');
+    } catch (err) {
+      showToast(err.message || 'Gallery upload failed', 'error');
+    } finally {
+      setGalleryUploading(false);
+      e.target.value = '';
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,6 +94,8 @@ export default function GameFormModal({ open, onClose, initialGame, onSuccess, s
       setSubmitting(false);
     }
   };
+
+  const galleryUrls = parseGallery(form.galleryImages);
 
   return (
     <Modal open={open} onClose={onClose} title={isEdit ? 'Edit game' : 'Create game'} size="lg">
@@ -135,9 +189,23 @@ export default function GameFormModal({ open, onClose, initialGame, onSuccess, s
             <label className={labelClass}>Game mode</label>
             <input required value={form.gameMode} onChange={(e) => setField('gameMode', e.target.value)} className={`mt-1 ${inputClass}`} />
           </div>
-          <div>
-            <label className={labelClass}>Cover image URL</label>
-            <input value={form.coverImage} onChange={(e) => setField('coverImage', e.target.value)} className={`mt-1 ${inputClass}`} />
+          <div className="sm:col-span-2">
+            <label className={labelClass}>Cover image</label>
+            <div className="mt-1 flex gap-2">
+              <input
+                value={form.coverImage}
+                onChange={(e) => setField('coverImage', e.target.value)}
+                className={inputClass}
+                placeholder="URL or upload file"
+              />
+              <input ref={coverInputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleCoverUpload} />
+              <button type="button" disabled={coverUploading} onClick={() => coverInputRef.current?.click()} className={btnClass}>
+                {coverUploading ? 'Uploading...' : 'Upload'}
+              </button>
+            </div>
+            {form.coverImage && (
+              <img src={form.coverImage} alt="" className="mt-2 h-24 w-auto max-w-full rounded-lg border border-gray-200 object-cover" />
+            )}
           </div>
           <div>
             <label className={labelClass}>Platforms (comma)</label>
@@ -160,8 +228,27 @@ export default function GameFormModal({ open, onClose, initialGame, onSuccess, s
             <input value={form.tags} onChange={(e) => setField('tags', e.target.value)} className={`mt-1 ${inputClass}`} />
           </div>
           <div className="sm:col-span-2">
-            <label className={labelClass}>Gallery image URLs (one per line)</label>
-            <textarea rows={2} value={form.galleryImages} onChange={(e) => setField('galleryImages', e.target.value)} className={`mt-1 ${inputClass} resize-none`} />
+            <label className={labelClass}>Gallery images</label>
+            <div className="mt-1 flex gap-2 items-start">
+              <textarea
+                rows={3}
+                value={form.galleryImages}
+                onChange={(e) => setField('galleryImages', e.target.value)}
+                className={`${inputClass} resize-none flex-1`}
+                placeholder="One URL per line, or upload files"
+              />
+              <input ref={galleryInputRef} type="file" accept="image/jpeg,image/png,image/webp" className="hidden" onChange={handleGalleryUpload} />
+              <button type="button" disabled={galleryUploading} onClick={() => galleryInputRef.current?.click()} className={btnClass}>
+                {galleryUploading ? 'Uploading...' : 'Upload'}
+              </button>
+            </div>
+            {galleryUrls.length > 0 && (
+              <div className="mt-2 flex flex-wrap gap-2">
+                {galleryUrls.map((url) => (
+                  <img key={url} src={url} alt="" className="h-16 w-16 rounded-lg border border-gray-200 object-cover" />
+                ))}
+              </div>
+            )}
           </div>
           <div className="sm:col-span-2">
             <label className={labelClass}>Video URL</label>
