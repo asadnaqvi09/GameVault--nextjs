@@ -1,6 +1,6 @@
 import React from 'react'
 import { notFound } from 'next/navigation'
-import { API_BASE } from '@/lib/api/config'
+import { apiUrl } from '@/lib/api/config'
 import ProductHeroSection from '@/components/sections/game_details/Product_Hero_Section'
 import GalleryCarousel from '@/components/sections/game_details/Gallery_Carousel'
 import DetailedFeatures from '@/components/sections/game_details/Detailed_Features'
@@ -8,8 +8,10 @@ import GameSpecifications from '@/components/sections/game_details/Game_Specific
 import ReviewsSection from '@/components/sections/game_details/Reviews_Section'
 import RelatedGames from '@/components/sections/game_details/Related_Games'
 
+export const dynamic = 'force-dynamic'
+
 async function fetchGameDetail(slug) {
-  const res = await fetch(`${API_BASE}/games/${slug}`, { cache: 'no-store' })
+  const res = await fetch(apiUrl(`/games/${slug}`), { cache: 'no-store' })
   if (res.status === 404) return null
   if (!res.ok) throw new Error('Failed to fetch game')
   const json = await res.json()

@@ -1,4 +1,4 @@
-import { API_BASE } from './config';
+import { apiUrl } from './config';
 
 export async function apiRequest(path, opts = {}) {
   const headers = {
@@ -6,7 +6,7 @@ export async function apiRequest(path, opts = {}) {
     ...(opts.headers || {}),
     ...(opts.auth && opts.token ? { Authorization: `Bearer ${opts.token}` } : {}),
   };
-  const res = await fetch(`${API_BASE}${path}`, {
+  const res = await fetch(apiUrl(path), {
     credentials: 'include',
     ...opts,
     headers,

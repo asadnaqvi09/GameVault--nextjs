@@ -1,6 +1,6 @@
-import { API_BASE } from '@/lib/api/config';
+import { apiUrl } from '@/lib/api/config';
 
-const BASE = `${API_BASE}/auth`;
+const BASE = apiUrl('/auth');
 
 let _token = null;
 export const setToken  = (t) => { _token = t; };

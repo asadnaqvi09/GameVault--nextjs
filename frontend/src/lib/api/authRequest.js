@@ -1,4 +1,4 @@
-import { API_BASE } from './config';
+import { apiUrl } from './config';
 import { setToken, clearToken, refreshTokenAPI } from '@/store/api/authApi';
 
 let _token = null;
@@ -17,7 +17,7 @@ async function fetchWithToken(path, opts = {}) {
     'Content-Type': 'application/json',
     ...(opts.auth && _token ? { Authorization: `Bearer ${_token}` } : {}),
   };
-  const res = await fetch(`${API_BASE}${path}`, {
+  const res = await fetch(apiUrl(path), {
     credentials: 'include',
     ...opts,
     headers,

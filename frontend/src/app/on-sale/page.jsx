@@ -3,8 +3,15 @@ import SalesBanner from '@/components/sections/sales_page/SalesBanner'
 import CatalogLayout from '@/components/sections/games_page/CatalogueLayout'
 import { getOnSaleCount } from '@/store/api/gameApi'
 
+export const dynamic = 'force-dynamic'
+
 export default async function OnSalePage() {
-  const onSaleCount = await getOnSaleCount();
+  let onSaleCount = 0
+  try {
+    onSaleCount = await getOnSaleCount()
+  } catch {
+    onSaleCount = 0
+  }
   return (
     <main className='py-6 px-4 gap-20 flex flex-col'>
       <SalesBanner totalCount={onSaleCount} />

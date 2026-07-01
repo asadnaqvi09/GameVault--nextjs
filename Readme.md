@@ -82,7 +82,7 @@ npm run seed:reviews
 
 | Variable | Description |
 |----------|-------------|
-| `NEXT_PUBLIC_API_URL` | API base URL — `http://localhost:5000/api/v1` locally, Render URL in production |
+| `NEXT_PUBLIC_API_URL` | Render server origin — `http://localhost:5000` locally, `https://<your-render-service>.onrender.com` in production (`/api/v1` is appended automatically) |
 | `NEXT_PUBLIC_JAZZCASH_NUMBER` | JazzCash number shown at checkout (optional) |
 | `NEXT_PUBLIC_EASYPAISA_NUMBER` | EasyPaisa number shown at checkout (optional) |
 
@@ -104,7 +104,7 @@ npm run seed:reviews
 
 1. **MongoDB Atlas** — create a cluster, allow network access (`0.0.0.0/0` for Render), copy `MONGO_URI`
 2. **Render (backend)** — deploy `backend/`, set env vars, confirm `GET /api/v1/health` returns 200
-3. **Vercel (frontend)** — deploy `frontend/` with `NEXT_PUBLIC_API_URL=https://<your-render-service>.onrender.com/api/v1`
+3. **Vercel (frontend)** — deploy `frontend/` with `NEXT_PUBLIC_API_URL=https://<your-render-service>.onrender.com`
 4. **Update Render** — set `CLIENT_URL` to your final Vercel URL and redeploy if CORS blocks requests
 5. **Seed production** (optional) — run `npm run seed` locally against the production `MONGO_URI`
 

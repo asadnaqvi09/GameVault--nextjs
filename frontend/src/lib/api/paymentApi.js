@@ -1,9 +1,9 @@
-import { API_BASE } from './config';
+import { apiUrl } from './config';
 import { refreshTokenAPI } from '@/store/api/authApi';
 import { setAuthToken } from './authRequest';
 
 async function submitWithAuth(path, formData, token) {
-  const res = await fetch(`${API_BASE}${path}`, {
+  const res = await fetch(apiUrl(path), {
     method: 'POST',
     credentials: 'include',
     headers: token ? { Authorization: `Bearer ${token}` } : {},
