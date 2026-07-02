@@ -103,10 +103,18 @@ export default function CheckoutPage() {
       setTimeout(() => router.push("/profile"), 2000);
     } catch (err) {
       const status = err.response?.status;
+      const debug = err.response?.debug;
+      if (debug) {
+        console.error("[checkout]", "debug", debug);
+      }
       if (status === 409) {
         showToast(err.message || "This transaction ID was already used", "error");
       } else if (status === 503) {
         showToast("Payment upload is temporarily unavailable. Please try again.", "error");
+      } else if (debug?.source === "cloudinary") {
+        showToast(`Upload failed (Cloudinary). Check Render logs: ${debug.hint}`, "error");
+      } else if (debug?.source === "external-http-403") {
+        showToast("Server 403 — check Render logs and /api/v1/health for nodemailer", "error");
       } else {
         showToast(err.message || "Failed to place order", "error");
       }

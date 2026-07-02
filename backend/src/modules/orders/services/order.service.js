@@ -20,6 +20,7 @@ import {
   sendOrderFulfilledEmail,
   sendOrderExpiredEmail,
 } from '../../../shared/utils/sendEmail.util.js';
+import { logPayment, logPaymentError } from '../../../shared/utils/paymentDebug.util.js';
 
 export const buildOrderNumber = () => {
   const date = new Date().toISOString().slice(0, 10).replace(/-/g, '');
@@ -126,7 +127,7 @@ export const placeCodOrder = async (userId, payload) => {
   return { order: toPublicOrder(populated, payment), payment };
 };
 
-export const placeManualPaymentOrder = async (userId, payload, file) => {
+export const placeManualPaymentOrder = async (userId, payload, file, requestId = null) => {
   if (!file) throw new Error('Payment proof image is required');
   const duplicate = await findUsedTransactionId(payload.transactionId);
   if (duplicate) throw new Error('This transaction ID has already been used');
@@ -136,8 +137,11 @@ export const placeManualPaymentOrder = async (userId, payload, file) => {
 
   let order = null;
   let proofPublicId = null;
+  let failedStep = 'init';
 
   try {
+    failedStep = 'create_order';
+    logPayment('step_create_order', { requestId, orderNumber, userId: userId?.toString() });
     order = await Order.create({
       orderNumber,
       user: userId,
@@ -151,10 +155,24 @@ export const placeManualPaymentOrder = async (userId, payload, file) => {
       expiresAt,
       fulfillment: { status: FULFILLMENT_STATUS.PENDING, keys: [] },
     });
+    logPayment('step_order_created', { requestId, orderNumber, orderId: order._id?.toString() });
 
+    failedStep = 'cloudinary_upload';
+    logPayment('step_cloudinary_upload_start', {
+      requestId,
+      orderNumber,
+      bytes: file.buffer?.length ?? 0,
+    });
     const proof = await uploadPaymentProof(file.buffer, orderNumber);
     proofPublicId = proof.publicId;
+    logPayment('step_cloudinary_upload_done', {
+      requestId,
+      orderNumber,
+      publicId: proofPublicId,
+      url: proof.url,
+    });
 
+    failedStep = 'create_payment';
     const payment = await createPayment({
       order: order._id,
       user: userId,
@@ -171,19 +189,39 @@ export const placeManualPaymentOrder = async (userId, payload, file) => {
         uploadedAt: new Date(),
       },
     });
+    logPayment('step_payment_created', {
+      requestId,
+      orderNumber,
+      paymentId: payment._id?.toString(),
+    });
 
+    failedStep = 'link_order_payment';
     order.payment = payment._id;
     await order.save();
     const populated = order.toObject();
+
+    failedStep = 'dispatch_emails';
+    logPayment('step_dispatch_emails', { requestId, orderNumber, provider: 'nodemailer' });
     dispatchOrderPlacedEmails(populated, payment);
+
+    logPayment('step_complete', { requestId, orderNumber });
     return { order: toPublicOrder(populated, payment), payment };
   } catch (err) {
+    logPaymentError(failedStep, err, {
+      requestId,
+      orderNumber,
+      orderId: order?._id?.toString() || null,
+      proofPublicId,
+      rollbackOrder: Boolean(order?._id),
+      rollbackProof: Boolean(proofPublicId),
+    });
     if (order?._id) {
       await Order.findByIdAndDelete(order._id).catch(() => {});
     }
     if (proofPublicId) {
       await removePaymentProof(proofPublicId).catch(() => {});
     }
+    err.failedStep = failedStep;
     throw err;
   }
 };

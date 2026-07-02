@@ -48,7 +48,11 @@ const sendMail = async ({ to, subject, html, replyTo }) => {
 /** Fire-and-forget wrapper — never throws to callers. */
 export const safeSend = (promise, label) => {
   Promise.resolve(promise).catch((err) => {
-    console.error(`Email failed (${label}):`, err.message);
+    console.error('[email]', 'nodemailer', 'FAILED', label, JSON.stringify({
+      message: err?.message || String(err),
+      code: err?.code || null,
+      responseCode: err?.responseCode || null,
+    }));
   });
 };
 

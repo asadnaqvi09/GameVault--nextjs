@@ -3,7 +3,9 @@ import { refreshTokenAPI } from '@/store/api/authApi';
 import { setAuthToken } from './authRequest';
 
 async function submitWithAuth(path, formData, token) {
-  const res = await fetch(apiUrl(path), {
+  const url = apiUrl(path);
+  console.log('[checkout]', 'POST', url);
+  const res = await fetch(url, {
     method: 'POST',
     credentials: 'include',
     headers: token ? { Authorization: `Bearer ${token}` } : {},
@@ -11,10 +13,20 @@ async function submitWithAuth(path, formData, token) {
   });
   const data = await res.json();
   if (!res.ok) {
+    console.error('[checkout]', 'payment_failed', {
+      status: res.status,
+      message: data.message,
+      error: data.error,
+      debug: data.debug,
+    });
     const err = new Error(data.message ?? 'Request failed');
     err.response = { ...data, status: res.status };
     throw err;
   }
+  console.log('[checkout]', 'payment_success', {
+    status: res.status,
+    orderNumber: data.data?.orderNumber,
+  });
   return data;
 }
 

@@ -18,6 +18,14 @@ router.get('/health', (_req, res) => {
     email: {
       provider: 'nodemailer',
       configured: Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS),
+      resendKeyPresent: Boolean(process.env.RESEND_API_KEY),
+    },
+    cloudinary: {
+      configured: Boolean(
+        process.env.CLOUDINARY_CLOUD_NAME &&
+        process.env.CLOUDINARY_API_KEY &&
+        process.env.CLOUDINARY_API_SECRET
+      ),
     },
   });
 });

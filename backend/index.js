@@ -45,8 +45,19 @@ app.use(errorHandler);
 
 app.listen(appConfig.port, () => {
   const smtpReady = Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS);
+  const cloudinaryReady = Boolean(
+    process.env.CLOUDINARY_CLOUD_NAME &&
+    process.env.CLOUDINARY_API_KEY &&
+    process.env.CLOUDINARY_API_SECRET
+  );
   console.log(`Server is running on port ${appConfig.port}`);
-  console.log(`Email provider: nodemailer (${smtpReady ? 'SMTP configured' : 'SMTP not configured'})`);
+  console.log('[startup]', JSON.stringify({
+    emailProvider: 'nodemailer',
+    smtpConfigured: smtpReady,
+    resendKeyPresent: Boolean(process.env.RESEND_API_KEY),
+    cloudinaryConfigured: cloudinaryReady,
+    nodeEnv: appConfig.nodeEnv,
+  }));
   expireStaleOrders().catch(() => {});
   setInterval(() => {
     expireStaleOrders().catch(() => {});

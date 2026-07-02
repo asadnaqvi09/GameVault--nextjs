@@ -1,4 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
+import { logPayment, logPaymentError } from '../../../shared/utils/paymentDebug.util.js';
 
 const isConfigured = () =>
   process.env.CLOUDINARY_CLOUD_NAME &&
@@ -15,8 +16,10 @@ if (isConfigured()) {
 
 export const uploadPaymentProof = async (buffer, orderNumber) => {
   if (!isConfigured()) {
+    logPaymentError('cloudinary_config', new Error('Cloudinary is not configured'), { orderNumber });
     throw new Error('Cloudinary is not configured');
   }
+  logPayment('cloudinary_upload_stream_open', { orderNumber, bytes: buffer?.length ?? 0 });
   return new Promise((resolve, reject) => {
     const stream = cloudinary.uploader.upload_stream(
       {
@@ -25,7 +28,18 @@ export const uploadPaymentProof = async (buffer, orderNumber) => {
         allowed_formats: ['jpg', 'jpeg', 'png', 'webp'],
       },
       (error, result) => {
-        if (error) return reject(error);
+        if (error) {
+          logPaymentError('cloudinary_upload_callback', error, {
+            orderNumber,
+            httpCode: error.http_code,
+            cloudinaryMessage: error.message,
+          });
+          return reject(error);
+        }
+        logPayment('cloudinary_upload_callback_ok', {
+          orderNumber,
+          publicId: result.public_id,
+        });
         resolve({ url: result.secure_url, publicId: result.public_id });
       }
     );
