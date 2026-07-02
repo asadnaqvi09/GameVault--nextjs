@@ -44,7 +44,9 @@ app.use(notFound);
 app.use(errorHandler);
 
 app.listen(appConfig.port, () => {
+  const smtpReady = Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS);
   console.log(`Server is running on port ${appConfig.port}`);
+  console.log(`Email provider: nodemailer (${smtpReady ? 'SMTP configured' : 'SMTP not configured'})`);
   expireStaleOrders().catch(() => {});
   setInterval(() => {
     expireStaleOrders().catch(() => {});

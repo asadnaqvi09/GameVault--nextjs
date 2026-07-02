@@ -12,7 +12,14 @@ import contactRoutes from '../modules/contact/routes/contact.routes.js';
 const router = Router();
 
 router.get('/health', (_req, res) => {
-  res.status(200).json({ success: true, message: 'API is healthy' });
+  res.status(200).json({
+    success: true,
+    message: 'API is healthy',
+    email: {
+      provider: 'nodemailer',
+      configured: Boolean(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS),
+    },
+  });
 });
 
 router.use('/auth', authRoutes);
